@@ -192,7 +192,15 @@ Template.signup_slider_wrapper.events({
 	},
 	'focus input, mousedown select': function(e) {
 		$(e.currentTarget).removeClass('error');
-	}
+        $(e.currentTarget).addClass('notEmpty');
+	},
+    'focus input, focus textarea': function(e) {
+        $(e.currentTarget).addClass('notEmpty');
+    },
+    'blur input, blur textarea': function(e) {
+        if( _.compact($(e.currentTarget).val().split(' ')).length == 0 || $(e.currentTarget).val() == $(e.currentTarget).prop('placeholder') )
+            $(e.currentTarget).removeClass('notEmpty');
+    }
 });
 
 Template.signup_slider_wrapper.rendered = function() {

@@ -4,6 +4,15 @@
     width:100%;
     min-height: 45px;
 	z-index: 100;
+
+    background: transparent; /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(0, 0, 0, .4) 0%, transparent 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0, 0, 0, .4)), color-stop(100%,transparent)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(0, 0, 0, .4) 0%,transparent 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(0, 0, 0, .4) 0%,transparent 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(0, 0, 0, .4) 0%,transparent 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .4) 0%,transparent 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(0, 0, 0, .4)', endColorstr='transparent',GradientType=0 ); /* IE6-9 */
 }
 
 .nav-menu {
