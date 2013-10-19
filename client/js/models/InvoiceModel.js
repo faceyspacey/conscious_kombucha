@@ -101,24 +101,119 @@ InvoiceModel = function(doc){
     };
 
     this.renderInvoicePDF = function(){
-        //var logo = getBase64Image('/images/invoice/top-logo.png');
-        var self = this;
+        var self = this,
+            venue = this.venue();
+
+        // generation needs to be in callback to get the fully loaded logo
         getImageFromUrl('/images/invoice/top-logo.jpeg', function(imgData){
             var doc = new jsPDF('portrait', 'cm', 'a4');
 
 
+            // frame for the invoice
             doc.setLineWidth(0.07);
             doc.setDrawColor(0, 105, 170);
             doc.rect(1, 1, 19, 27.7, 'stroke');
 
+
+            // top-right: ConsciousKombucha logo
             doc.addImage(imgData, 'JPEG', 10.45, 1.07, 9.5, 2.68);
 
 
+            // top-left: INVOICE #
             doc.setFont("helvetica");
             doc.setFontType('bold');
-            doc.setFontSize(28);
+            doc.setFontSize(26);
             doc.setTextColor(0,105,170);
-            doc.text(1.8, 2.6, "INVOICE #" + self.order_num);
+            doc.text(1.8, 2.8, "INVOICE #" + self.order_num);
+
+
+            // top-left: CK info
+            var box = {
+                left: 1.8,
+                top: 3.4,
+                fontSize: 12,
+                fontStyleData: 'normal'
+            };
+            doc.setFontType(box.fontStyleData);
+            doc.setFontSize(box.fontSize);
+            doc.setTextColor(0,105,170);
+            doc.text(box.left, box.top+0.5, "sales@consciouskombucha.com");
+            doc.setTextColor(0,0,0);
+            doc.text(box.left, box.top+1.0, "Conscious Kombucha, Inc.");
+            doc.text(box.left, box.top+1.5, "707 Cathedral Pointe LN");
+            doc.text(box.left, box.top+2.0, "Santa Barbara, CA 93111");
+
+
+            // top-right: invoice info
+            box = {
+                left: 11.3,
+                top: box.top+0.4,
+                fontSize: 12,
+                fontStyleLabel: 'normal'
+            };
+            doc.setFontType(box.fontStyleLabel);
+            doc.setFontSize(box.fontSize);
+            doc.text(box.left, box.top+0.5, "Invoice Date:");
+            doc.text(box.left, box.top+1.0, "Delivery Date:");
+            doc.text(box.left, box.top+1.5, "Due:");
+
+            doc.text(box.left+3.3, box.top+0.5, String(self.requestedDeliveryDate()));
+            doc.text(box.left+3.3, box.top+1.0, String(self.actualDeliveryDate()));
+            doc.text(box.left+3.3, box.top+=1.5, "$"+String(self.total));
+
+            // top-right: invoice info
+            box = {
+                left: 1.8,
+                top: box.top+1.5,
+                fontSize: 12,
+                fontStyleLabel: 'bold',
+                fontStyleData: 'normal'
+            };
+            doc.setFontType(box.fontStyleLabel);
+            doc.setFontSize(box.fontSize);
+            doc.setTextColor(0,105,170);
+            doc.text(box.left, box.top, "Client:");
+
+            doc.setFontType(box.fontStyleData);
+            doc.setTextColor(0,105,170);
+            doc.text(box.left, box.top+0.5, String(venue.email) || 'no email address');
+            doc.setTextColor(0,0,0);
+            doc.text(box.left, box.top+1.0, String(venue.name));
+            doc.text(box.left, box.top+=1.5, String(venue.address));
+
+
+
+            // function for drawing table rows
+            var drawRow = function(left, top, height){
+                doc.rect(left, top, 1.3, height, 'stroke');
+                doc.rect(left+1.3, top, 10, height, 'stroke');
+                doc.rect(left+1.3+10, top, 2.5, height, 'stroke');
+                doc.rect(left+1.3+10+2.5, top, 3.6, height, 'stroke');
+            }
+
+            box = {
+                left: 1.8,
+                top: box.top+0.5,
+                fontSize: 12,
+                fontStyleLabel: 'bold',
+                fontStyleData: 'normal'
+            };
+            doc.setLineWidth(0.03);
+            doc.setDrawColor(0, 105, 170);
+
+            drawRow(box.left, box.top, 0.8);
+
+            /*doc.table(box.left, box.top, 17.4, 6, {
+                headers: ['one', 'two', 'three'],
+                content: [
+                    ['val', 'val', 'val'],
+                    ['row 2', 'etc', 'etc']
+                ]
+            });*/
+
+
+
+            // output the complete pdf invoice
             doc.output('dataurlnewwindow');
         });
 

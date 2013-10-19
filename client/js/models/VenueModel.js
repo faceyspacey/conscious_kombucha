@@ -6,6 +6,7 @@
  *  user_id                     Str
  *  name                        Str
  *  email                       Str
+ *  address                     Str
  *  facebook                    Str
  *  twitter                     Str
  *  phone                       Str
