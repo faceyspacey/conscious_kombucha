@@ -1,18 +1,33 @@
-getBase64Image = function(img) {
-    // Create an empty canvas element
-    var canvas = document.createElement("canvas");
-    canvas.width = img.width;
-    canvas.height = img.height;
+getImageFromUrl = function(url, callback) {
+    var img = new Image(), data, ret = {
+        data: null,
+        pending: true
+    };
 
-    // Copy the image contents to the canvas
-    var ctx = canvas.getContext("2d");
-    ctx.drawImage(img, 0, 0);
+    img.onError = function() {
+        throw new Error('Cannot load image: "'+url+'"');
+    };
+    img.onload = function() {
+        var canvas = document.createElement('canvas');
+        document.body.appendChild(canvas);
+        canvas.width = img.width;
+        canvas.height = img.height;
 
-    // Get the data-URL formatted image
-    // Firefox supports PNG and JPEG. You could check img.src to
-    // guess the original format, but be aware the using "image/jpg"
-    // will re-encode the image.
-    var dataURL = canvas.toDataURL("image/png");
+        var ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0);
+        // Grab the image as a jpeg encoded in base64, but only the data
+        data = canvas.toDataURL('image/jpeg').slice('data:image/jpeg;base64,'.length);
+        // Convert the data to binary form
+        data = atob(data);
+        document.body.removeChild(canvas);
 
-    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+        ret['data'] = data;
+        ret['pending'] = false;
+        if (typeof callback === 'function') {
+            callback(data);
+        }
+    };
+    img.src = url;
+
+    return ret;
 };
