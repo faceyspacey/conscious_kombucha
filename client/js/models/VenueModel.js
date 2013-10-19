@@ -26,7 +26,11 @@ VenueModel = function(doc){
 		tap_request_date: new Date,
         delivery_date : new Date(0),
 	};
-	
+
+    this.afterRemove = function() {
+        this.kegs().forEach(function(keg){ Kegs.remove(keg._id) });
+    };
+
     this.afterInsert = function(){
     };
 

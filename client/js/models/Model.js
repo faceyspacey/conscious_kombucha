@@ -43,6 +43,13 @@ Model = {
 		delete mongoValues.errors;
 		return mongoValues;
 	},
+    remove: function(){
+        var self = this;
+        this.collection().remove(this._id, function(){ self.afterRemove(); });
+    },
+    afterRemove: function() {
+        //it's called after the object removed from database
+    },
 	time: function(field) {
 		return moment(this[field]).format("ddd, MMM Do, h:mm a");
 	},

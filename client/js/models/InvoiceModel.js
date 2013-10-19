@@ -100,6 +100,28 @@ InvoiceModel = function(doc){
         // payment period rendering comes here
     };
 
+    this.renderInvoicePDF = function(){
+        //var logo = getBase64Image('/images/invoice/top-logo.png');
+
+        var doc = new jsPDF('portrait', 'cm', 'a4');
+
+
+        doc.setLineWidth(0.1);
+        doc.setDrawColor(0, 105, 170);
+        doc.rect(1, 1, 19, 27.7, 'stroke');
+
+        //doc.addImage('/images/invoice/top-logo.png', 'PNG', 10.5, 1, 8, 2.257);
+
+
+        doc.setFont("helvetica");
+        doc.setFontType('bold');
+        doc.setFontSize(28);
+        doc.setTextColor(0,105,170);
+        doc.text(1.8, 2.6, "INVOICE #" + this.order_num);
+        doc.output('dataurlnewwindow');
+
+    };
+
 	_.extend(this, Model);
 	this.extend(doc);
 
