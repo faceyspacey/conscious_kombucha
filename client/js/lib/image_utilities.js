@@ -13,6 +13,8 @@ getImageFromUrl = function(url, callback) {
         canvas.width = img.width;
         canvas.height = img.height;
 
+        console.log(img.type);
+
         var ctx = canvas.getContext('2d');
         ctx.drawImage(img, 0, 0);
         // Grab the image as a jpeg encoded in base64, but only the data

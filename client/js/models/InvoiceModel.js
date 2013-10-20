@@ -106,17 +106,17 @@ InvoiceModel = function(doc){
 
         // generation needs to be in callback to get the fully loaded logo
         getImageFromUrl('/images/invoice/top-logo.jpeg', function(imgData){
-            var doc = new jsPDF('portrait', 'cm', 'a4');
+            var doc = new jsPDF('portrait', 'mm', 'a4');
 
 
             // frame for the invoice
-            doc.setLineWidth(0.07);
+            doc.setLineWidth(0.7);
             doc.setDrawColor(0, 105, 170);
-            doc.rect(1, 1, 19, 27.7, 'stroke');
+            doc.rect(10, 10, 190, 277, 'stroke');
 
 
             // top-right: ConsciousKombucha logo
-            doc.addImage(imgData, 'JPEG', 10.45, 1.07, 9.5, 2.68);
+            doc.addImage(imgData, 'JPEG', 104.5, 10.7, 95, 26.8);
 
 
             // top-left: INVOICE #
@@ -124,47 +124,47 @@ InvoiceModel = function(doc){
             doc.setFontType('bold');
             doc.setFontSize(26);
             doc.setTextColor(0,105,170);
-            doc.text(1.8, 2.8, "INVOICE #" + self.order_num);
+            doc.text(18, 28, "INVOICE #" + self.order_num);
 
 
             // top-left: CK info
             var box = {
-                left: 1.8,
-                top: 3.4,
+                left: 18,
+                top: 34,
                 fontSize: 12,
                 fontStyleData: 'normal'
             };
             doc.setFontType(box.fontStyleData);
             doc.setFontSize(box.fontSize);
             doc.setTextColor(0,105,170);
-            doc.text(box.left, box.top+0.5, "sales@consciouskombucha.com");
+            doc.text(box.left, box.top+5, "sales@consciouskombucha.com");
             doc.setTextColor(0,0,0);
-            doc.text(box.left, box.top+1.0, "Conscious Kombucha, Inc.");
-            doc.text(box.left, box.top+1.5, "707 Cathedral Pointe LN");
-            doc.text(box.left, box.top+2.0, "Santa Barbara, CA 93111");
+            doc.text(box.left, box.top+10, "Conscious Kombucha, Inc.");
+            doc.text(box.left, box.top+15, "707 Cathedral Pointe LN");
+            doc.text(box.left, box.top+20, "Santa Barbara, CA 93111");
 
 
             // top-right: invoice info
             box = {
-                left: 11.3,
-                top: box.top+0.4,
+                left: 113,
+                top: box.top+4,
                 fontSize: 12,
                 fontStyleLabel: 'normal'
             };
             doc.setFontType(box.fontStyleLabel);
             doc.setFontSize(box.fontSize);
-            doc.text(box.left, box.top+0.5, "Invoice Date:");
-            doc.text(box.left, box.top+1.0, "Delivery Date:");
-            doc.text(box.left, box.top+1.5, "Due:");
+            doc.text(box.left, box.top+5, "Invoice Date:");
+            doc.text(box.left, box.top+10, "Delivery Date:");
+            doc.text(box.left, box.top+15, "Due:");
 
-            doc.text(box.left+3.3, box.top+0.5, String(self.requestedDeliveryDate()));
-            doc.text(box.left+3.3, box.top+1.0, String(self.actualDeliveryDate()));
-            doc.text(box.left+3.3, box.top+=1.5, "$"+String(self.total));
+            doc.text(box.left+33, box.top+5, String(self.requestedDeliveryDate()));
+            doc.text(box.left+33, box.top+10, String(self.actualDeliveryDate()));
+            doc.text(box.left+33, box.top+=15, "$"+String(self.total));
 
             // top-right: invoice info
             box = {
-                left: 1.8,
-                top: box.top+1.5,
+                left: 18,
+                top: box.top+15,
                 fontSize: 12,
                 fontStyleLabel: 'bold',
                 fontStyleData: 'normal'
@@ -176,41 +176,79 @@ InvoiceModel = function(doc){
 
             doc.setFontType(box.fontStyleData);
             doc.setTextColor(0,105,170);
-            doc.text(box.left, box.top+0.5, String(venue.email) || 'no email address');
+            doc.text(box.left, box.top+5, String(venue.email) || 'no email address');
             doc.setTextColor(0,0,0);
-            doc.text(box.left, box.top+1.0, String(venue.name));
-            doc.text(box.left, box.top+=1.5, String(venue.address));
+            doc.text(box.left, box.top+10, String(venue.name));
+            doc.text(box.left, box.top+=15, String(venue.address));
 
 
 
             // function for drawing table rows
             var drawRow = function(left, top, height){
-                doc.rect(left, top, 1.3, height, 'stroke');
-                doc.rect(left+1.3, top, 10, height, 'stroke');
-                doc.rect(left+1.3+10, top, 2.5, height, 'stroke');
-                doc.rect(left+1.3+10+2.5, top, 3.6, height, 'stroke');
+                //doc.rect(left, top, 174, height, 'stroke');
+                doc.rect(left, top, 13, height, 'stroke');
+                doc.rect(left+13, top, 110, height, 'stroke');
+                doc.rect(left+13+110, top, 25, height, 'stroke');
+                doc.rect(left+13+110+25, top, 26, height, 'stroke');
             }
 
             box = {
-                left: 1.8,
-                top: box.top+0.5,
+                left: 18,
+                top: box.top+5,
                 fontSize: 12,
-                fontStyleLabel: 'bold',
-                fontStyleData: 'normal'
+                fontSizeLabel: 13,
+                fontStyleLabel: 'normal'
             };
-            doc.setLineWidth(0.03);
+            doc.setLineWidth(0.4);
             doc.setDrawColor(0, 105, 170);
 
-            drawRow(box.left, box.top, 0.8);
+            drawRow(box.left, box.top, 10);
+            doc.setLineWidth(1);
+            drawRow(box.left, box.top+10, 0.1);
 
-            /*doc.table(box.left, box.top, 17.4, 6, {
-                headers: ['one', 'two', 'three'],
-                content: [
-                    ['val', 'val', 'val'],
-                    ['row 2', 'etc', 'etc']
-                ]
-            });*/
+            doc.setFontType(box.fontStyleLabel);
+            doc.setFontSize(box.fontSizeLabel);
+            doc.setTextColor(0,105,170);
+            doc.text(box.left+1, box.top+7, "Units");
+            doc.text(box.left+2+13, box.top+7, "Details");
+            doc.text(box.left+7+13+110, box.top+7, "Rate");
+            doc.text(box.left+4+13+110+25, box.top+7, "Subtotal");
 
+            box.top+=2;
+            doc.setFontSize(box.fontSize);
+            doc.setTextColor(0,0,0);
+            doc.setLineWidth(0.15);
+            self.invoiceItems().forEach(function(item){
+                drawRow(box.left, box.top+=8, 8);
+                doc.text(box.left+1, box.top+5.7, String(item.quantity));
+                doc.text(box.left+2+13, box.top+5.7, String(item.name));
+                doc.rect(box.left+2+13+60, box.top+1.6, 5, 5, 'stroke');
+                /*getImageFromUrl(String(item.flavor_icon), function(imgData){
+                    doc.addImage(imgData, 'JPEG', box.left+2+13+60, box.top, 16, 16);
+                });*/
+                var rateWidth = doc.getStringUnitWidth('$'+String(item.rate))*box.fontSize/(72/25.4);
+                doc.text(box.left+2+13+67.5, box.top+5.7, String(item.flavor_name));
+                doc.text(box.left+13+110+25-rateWidth-2, box.top+5.7, '$'+String(item.rate));
+                var subtotalWidth = doc.getStringUnitWidth('$'+String(item.getSubtotal()))*box.fontSize/(72/25.4);
+                doc.text(box.left+13+110+25+26-subtotalWidth-2, box.top+5.7, '$'+String(item.getSubtotal()));
+            });
+
+
+            doc.setLineWidth(0.5);
+            drawRow(box.left, box.top+=8, 0.1);
+            /*doc.setLineWidth(0.3);
+            doc.rect(left+13+110, box.top, 25, height, 'stroke');
+            doc.rect(left+13+110+25, box.top, 26, height, 'stroke');*/
+
+
+
+            doc.setFontType('bold');
+            doc.setFontSize('14');
+            doc.setTextColor(0,105,170);
+            doc.text(box.left+5+13+110, box.top+7, 'Total:');
+            doc.setTextColor(0,0,0);
+            var subtotalWidth = doc.getStringUnitWidth('$'+String(self.total))*box.fontSizeLabel/(72/25.4);
+            doc.text(box.left+13+110+25+26-subtotalWidth-2, box.top+6.5, '$'+String(self.total));
 
 
             // output the complete pdf invoice

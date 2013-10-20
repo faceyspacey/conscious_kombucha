@@ -111,7 +111,7 @@ VenueModel = function(doc){
             flavors.push({
                 period: keg.payment_cycle + '-' + keg.payment_day,
                 period_name: keg.payment_cycle + ' on ' + keg.payment_day,
-                name: keg.getType().name + ' ' + keg.randomCompensatedFlavor().name + ' keg(s) ' + keg.payment_cycle.ucfirst()+ '',
+                name: keg.getType().name + ' keg(s) ' + keg.payment_cycle.ucfirst()+ '',
                 quantity: kegGroup.length,
                 subtotal: kegs_subtotal,
                 rate: keg.price,

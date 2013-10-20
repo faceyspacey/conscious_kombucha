@@ -40,6 +40,9 @@ InvoiceItemModel = function(doc) {
 	this.subtotal = function() {
 		return this.quantity * this.rate;
 	};
+    this.getSubtotal = function() {
+        return this.quantity * this.rate;
+    };
 	
 	_.extend(this, Model);
 	this.extend(doc);
