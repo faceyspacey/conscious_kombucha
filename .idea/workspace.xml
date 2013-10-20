@@ -2,22 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab780d15-ed56-4034-a954-81edd1255e67" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/models/InvoiceItemModel.js" afterPath="$PROJECT_DIR$/client/js/models/InvoiceItemModel.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/emails/admin_delivery_message.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/models/InvoiceModel.js" afterPath="$PROJECT_DIR$/client/js/models/InvoiceModel.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/models/VenueModel.js" afterPath="$PROJECT_DIR$/client/js/models/VenueModel.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/emails/admin_contact_message.html" afterPath="$PROJECT_DIR$/client/templates/emails/admin_contact_message.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/client.js" afterPath="$PROJECT_DIR$/client/js/client.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/email.js" afterPath="$PROJECT_DIR$/server/email.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/lib/image_utilities.js" afterPath="$PROJECT_DIR$/client/js/lib/image_utilities.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/kegs.js" afterPath="$PROJECT_DIR$/server/kegs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/template_js/mobile/mobile_container.js" afterPath="$PROJECT_DIR$/client/template_js/mobile/mobile_container.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/venues.js" afterPath="$PROJECT_DIR$/server/venues.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ckhome.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1382297342267" ignored="false" />
-    <file path="/VenueModel.js" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1382294601048" ignored="false" />
+    <file path="/VenueModel.js" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1382310516735" ignored="false" />
     <file path="/editFlavors.css" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1380387131801" ignored="false" />
     <file path="/venues.css" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1380930344181" ignored="false" />
     <file path="/main.html" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1381604592248" ignored="false" />
@@ -83,7 +78,7 @@
     <file path="/venueKegerators.js" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1380550776399" ignored="false" />
     <file path="/Invoices.js" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1380553518694" ignored="false" />
     <file path="/invoices.js" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1381788536171" ignored="false" />
-    <file path="/InvoiceModel.js" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1382310060843" ignored="false" />
+    <file path="/InvoiceModel.js" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1382311320943" ignored="false" />
     <file path="/page_kegeratorInstalls.html" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1380575207597" ignored="false" />
     <file path="/kegeratorInstalls.js" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1380573584502" ignored="false" />
     <file path="/installed_kegerators.html" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1380575398568" ignored="false" />
@@ -139,7 +134,7 @@
     <file path="/contact_us.js" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1381788881422" ignored="false" />
     <file path="/contact_us.css" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1381777673709" ignored="false" />
     <file path="/edit_profile.html" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1381871200082" ignored="false" />
-    <file path="/email.js" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1381780358785" ignored="false" />
+    <file path="/email.js" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1382310854577" ignored="false" />
     <file path="/order_kegs.html" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1381850200975" ignored="false" />
     <file path="/server_errors.html" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1381854427648" ignored="false" />
     <file path="/OrderedFlavorModel.js" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1381857936025" ignored="false" />
@@ -155,6 +150,7 @@
     <file path="/jspdf.js" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1382196276990" ignored="false" />
     <file path="/image_utilities.js" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1382306549223" ignored="false" />
     <file path="/InvoiceItemModel.js" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1382307398886" ignored="false" />
+    <file path="/admin_delivery_message.html" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1382310989949" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,16 +178,16 @@
       <file leaf-file-name="VenueModel.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/js/models/VenueModel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="32" selection-start="2116" selection-end="2116" vertical-scroll-proportion="0.0">
+            <state line="74" column="111" selection-start="2161" selection-end="2161" vertical-scroll-proportion="-8.4">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InvoiceModel.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="InvoiceModel.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/js/models/InvoiceModel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="246" column="0" selection-start="8967" selection-end="8967" vertical-scroll-proportion="0.8511166">
+            <state line="43" column="0" selection-start="1331" selection-end="1331" vertical-scroll-proportion="-3.8235295">
               <folding />
             </state>
           </provider>
@@ -215,15 +211,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="kegs.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/kegs.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="5" selection-start="672" selection-end="672" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="client.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/js/client.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -236,10 +223,26 @@
       <file leaf-file-name="admin_contact_message.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/templates/emails/admin_contact_message.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="11" selection-start="155" selection-end="155" vertical-scroll-proportion="-3.125">
-              <folding>
-                <element signature="n#style#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-              </folding>
+            <state line="5" column="11" selection-start="145" selection-end="145" vertical-scroll-proportion="-3.125">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin_delivery_message.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/templates/emails/admin_delivery_message.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="11" selection-start="53" selection-end="53" vertical-scroll-proportion="-1.25">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="email.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/email.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="47" column="22" selection-start="1388" selection-end="1388" vertical-scroll-proportion="0.67264575">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -248,15 +251,6 @@
         <entry file="file://$PROJECT_DIR$/client/template_js/mobile/mobile_container.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="149" column="16" selection-start="4725" selection-end="4725" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="collections.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/collections.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="25" selection-start="904" selection-end="904" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -289,29 +283,29 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/client/css/elements.css" />
         <option value="$PROJECT_DIR$/client/js/lib/form_utilities.js" />
         <option value="$PROJECT_DIR$/client/js/lib/jsPDF/jspdf.js" />
         <option value="$PROJECT_DIR$/client/js/lib/jsPDF/jspdf.PLUGINTEMPLATE.js" />
         <option value="$PROJECT_DIR$/client/js/lib/jsPDF/base64.js" />
         <option value="$PROJECT_DIR$/client/js/models/Model.js" />
-        <option value="$PROJECT_DIR$/server/email.js" />
         <option value="$PROJECT_DIR$/server/kegs.js" />
         <option value="$PROJECT_DIR$/server/venues.js" />
-        <option value="$PROJECT_DIR$/client/js/models/VenueModel.js" />
         <option value="$PROJECT_DIR$/client/js/client.js" />
-        <option value="$PROJECT_DIR$/client/templates/emails/admin_contact_message.html" />
         <option value="$PROJECT_DIR$/client/template_js/mobile/mobile_container.js" />
         <option value="$PROJECT_DIR$/client/js/models/InvoiceItemModel.js" />
         <option value="$PROJECT_DIR$/client/js/lib/image_utilities.js" />
+        <option value="$PROJECT_DIR$/client/js/models/VenueModel.js" />
+        <option value="$PROJECT_DIR$/client/templates/emails/admin_contact_message.html" />
+        <option value="$PROJECT_DIR$/client/templates/emails/admin_delivery_message.html" />
         <option value="$PROJECT_DIR$/client/js/models/InvoiceModel.js" />
+        <option value="$PROJECT_DIR$/server/email.js" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="51" />
-    <option name="y" value="22" />
+    <option name="x" value="49" />
+    <option name="y" value="24" />
     <option name="width" value="1317" />
     <option name="height" value="744" />
   </component>
@@ -659,7 +653,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="51" y="22" width="1317" height="744" extended-state="6" />
+    <frame x="49" y="24" width="1317" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -745,20 +739,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/templates/edit_profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/template_js/edit_profile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="9" selection-start="764" selection-end="764" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/stripe.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="16" selection-start="356" selection-end="356" vertical-scroll-proportion="0.0">
@@ -815,25 +795,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/templates/emails/admin_contact_message.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="11" selection-start="155" selection-end="155" vertical-scroll-proportion="-3.125">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/template_js/mobile/mobile_container.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="149" column="16" selection-start="4725" selection-end="4725" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/models/VenueModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="32" selection-start="2116" selection-end="2116" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -852,9 +816,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/templates/emails/admin_contact_message.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="11" selection-start="145" selection-end="145" vertical-scroll-proportion="-3.125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/templates/emails/admin_delivery_message.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="11" selection-start="53" selection-end="53" vertical-scroll-proportion="-1.25">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/models/VenueModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="111" selection-start="2161" selection-end="2161" vertical-scroll-proportion="-8.4">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/js/models/InvoiceModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="246" column="0" selection-start="8967" selection-end="8967" vertical-scroll-proportion="0.8511166">
+        <state line="43" column="0" selection-start="1331" selection-end="1331" vertical-scroll-proportion="-3.8235295">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/email.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="22" selection-start="1388" selection-end="1388" vertical-scroll-proportion="0.67264575">
           <folding />
         </state>
       </provider>

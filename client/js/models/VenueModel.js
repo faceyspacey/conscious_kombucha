@@ -72,8 +72,8 @@ VenueModel = function(doc){
 
     this.sendDeliveryMessages = function(invoiceId){
         var invoice = Invoices.findOne(invoiceId),
-            adminMessage = 'asd',
-            customerMessage ='';
+            adminMessage = Template.admin_delivery_message({invoice: invoice, venue: this, user: this.user()}),
+            customerMessage = '';
         Meteor.call('sendAdminEmail', this.user().getEmail(), 'Order delivered: #'+invoice.order_num, adminMessage, function(err, res){});
         Meteor.call('sendCustomerEmail', this.user().getEmail(), 'Order delivered: #'+invoice.order_num, customerMessage, function(err, res){});
     }

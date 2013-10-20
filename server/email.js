@@ -10,14 +10,14 @@ Meteor.methods({
 	     	to: 'james@faceyspacey.com',
 	     	from: info.email,
 	     	subject: info.name + ' from ' + info.city + ' (' + info.venue + ')',
-	     	text: info.message || 'no message'
+            html: info.message || 'no message'
 	    });
 
 		Email.send({
 		     to: info.email,
 		     from: 'tylerbeerman@gmail.com',
 		     subject: "Thanks for Contacting Conscious Kombucha -- Here's our Products:",
-		     text: 'http://ckhome.meteor.com/product'
+		     html: 'http://ckhome.meteor.com/product'
 		});
 	},
 	sendBasicEmail: function(to, from, message, subject, body) {
@@ -25,7 +25,7 @@ Meteor.methods({
             to: to,
             from: from,
             subject: subject,
-            text: body
+            html: body
         };
         Email.send(fullMessage);
         return fullMessage;
@@ -35,17 +35,17 @@ Meteor.methods({
             to: to,
             from: 'sales@consciouskombucha.com',
             subject: subject,
-            text: body
+            html: body
         };
         Email.send(fullMessage);
         return fullMessage;
 	},
 	sendAdminEmail: function(from, subject, body) {
         var fullMessage = {
-            to: '90.matheus@gmail.com', //'sales@consciouskombucha.com',
+            to: 'sales@consciouskombucha.com',
             from: from,
             subject: subject,
-            text: body
+            html: body
         };
 		Email.send(fullMessage);
         return fullMessage;
