@@ -72,7 +72,7 @@ VenueModel = function(doc){
 
     this.sendDeliveryMessages = function(invoiceId){
         var invoice = Invoices.findOne(invoiceId),
-            adminMessage = '',
+            adminMessage = 'asd',
             customerMessage ='';
         Meteor.call('sendAdminEmail', this.user().getEmail(), 'Order delivered: #'+invoice.order_num, adminMessage, function(err, res){});
         Meteor.call('sendCustomerEmail', this.user().getEmail(), 'Order delivered: #'+invoice.order_num, customerMessage, function(err, res){});
@@ -136,6 +136,7 @@ VenueModel = function(doc){
 			
         this.createInvoiceItems(flavorRows, invoiceId);
         this.chargeCustomer(invoiceId);
+        this.sendDeliveryMessages(invoiceId);
 
         return invoiceId;
     };

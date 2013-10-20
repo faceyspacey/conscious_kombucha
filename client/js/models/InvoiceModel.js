@@ -102,12 +102,19 @@ InvoiceModel = function(doc){
 
     this.renderInvoicePDF = function(){
         var self = this,
-            venue = this.venue();
+            venue = this.venue(),
+            imgs = {top: '/images/invoice/top-logo.jpeg'};
+
+        /*
+        _.each(this.invoiceItems().fetch(), function(item){
+            imgs[item.flavor_id] = item.flavor_icon;
+        });*/
 
         // generation needs to be in callback to get the fully loaded logo
-        getImageFromUrl('/images/invoice/top-logo.jpeg', function(imgData){
+        getImagesFromUrls(imgs, function(allImgData){
             var doc = new jsPDF('portrait', 'mm', 'a4');
 
+            console.log(allImgData);
 
             // frame for the invoice
             doc.setLineWidth(0.7);
@@ -116,7 +123,7 @@ InvoiceModel = function(doc){
 
 
             // top-right: ConsciousKombucha logo
-            doc.addImage(imgData, 'JPEG', 104.5, 10.7, 95, 26.8);
+            doc.addImage(allImgData.top, 'JPEG', 104.5, 10.7, 95, 26.8);
 
 
             // top-left: INVOICE #
@@ -176,7 +183,7 @@ InvoiceModel = function(doc){
 
             doc.setFontType(box.fontStyleData);
             doc.setTextColor(0,105,170);
-            doc.text(box.left, box.top+5, String(venue.email) || 'no email address');
+            doc.text(box.left, box.top+5, ['', 'undefined'].indexOf(String(venue.email)) == -1 ? String(venue.email) : 'No email address given.');
             doc.setTextColor(0,0,0);
             doc.text(box.left, box.top+10, String(venue.name));
             doc.text(box.left, box.top+=15, String(venue.address));
@@ -218,16 +225,21 @@ InvoiceModel = function(doc){
             doc.setFontSize(box.fontSize);
             doc.setTextColor(0,0,0);
             doc.setLineWidth(0.15);
-            self.invoiceItems().forEach(function(item){
+
+
+            var items = self.invoiceItems().fetch();
+            var pages = parseInt(items.length/22)+1;
+            _.each(items, function(item){
                 drawRow(box.left, box.top+=8, 8);
                 doc.text(box.left+1, box.top+5.7, String(item.quantity));
                 doc.text(box.left+2+13, box.top+5.7, String(item.name));
-                doc.rect(box.left+2+13+60, box.top+1.6, 5, 5, 'stroke');
+                /*doc.rect(box.left+2+13+60, box.top+1.6, 5, 5, 'stroke');
+                doc.addImage(allImgData[item.flavor_id], 'PNG', box.left+2+13+60, box.top+1.6, 5, 5);*/
                 /*getImageFromUrl(String(item.flavor_icon), function(imgData){
                     doc.addImage(imgData, 'JPEG', box.left+2+13+60, box.top, 16, 16);
                 });*/
                 var rateWidth = doc.getStringUnitWidth('$'+String(item.rate))*box.fontSize/(72/25.4);
-                doc.text(box.left+2+13+67.5, box.top+5.7, String(item.flavor_name));
+                doc.text(box.left+2+13+62.5, box.top+5.7, String(item.flavor_name));
                 doc.text(box.left+13+110+25-rateWidth-2, box.top+5.7, '$'+String(item.rate));
                 var subtotalWidth = doc.getStringUnitWidth('$'+String(item.getSubtotal()))*box.fontSize/(72/25.4);
                 doc.text(box.left+13+110+25+26-subtotalWidth-2, box.top+5.7, '$'+String(item.getSubtotal()));

@@ -37,6 +37,10 @@ InvoiceItemModel = function(doc) {
         return flavor;
     }
 
+    this.flavor_icon_jpeg = function(){
+
+    }
+
 	this.subtotal = function() {
 		return this.quantity * this.rate;
 	};

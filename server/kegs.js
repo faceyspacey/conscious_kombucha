@@ -17,6 +17,6 @@ Kegs.allow({
     },
     remove: function(userId, doc) {
         return ((doc.user_id === userId) || Roles.userIsInRole(userId, ['admin']));
-    },
-    fetch: ['user_id, created_at, updated_at']
+    }
+    //fetch: ['user_id, created_at, updated_at']
 });

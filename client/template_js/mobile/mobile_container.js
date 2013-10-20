@@ -56,7 +56,13 @@ var signupSteps = ['Add Your Venue', 'Select a Flavor', 'Delivery Times', 'Signu
 		
 		//set current step to 0 so the page 1 title shows in the toolbar
 		Session.set('signup_step', currentStep);
-	});
+	}),
+    resetSignupSessions = function(){
+        Session.set('signup_flavor_id', null);
+        Session.set('signup_cycle', null);
+        Session.set('signup_day', null);
+        Session.set('new_user_id', null);
+    };
 
 
 
@@ -104,7 +110,7 @@ Template.signup_slider_wrapper.events({
 	'mouseup #step_3_complete, tap #step_3_complete': function() {
 		if($('.radio-button-selected').length < 2) alert('Please select the day and timing of your keg delivery');
 		else {
-			var cycle = $('.radio-day').index($('.radio-button-selected')) ? 'weekly' : 'bi-weekly',
+			var cycle = $('.radio-cycle').index($('.radio-button-selected')) ? 'weekly' : 'bi-weekly',
 				day = $('.radio-day').index($('.radio-button-selected')) ? 'thursday' : 'monday';
 
 			Session.set('signup_cycle', cycle);
@@ -138,6 +144,7 @@ Template.signup_slider_wrapper.events({
 				var venue_id = Venues.insert({
 					name: $('#signup_venue_name').val(),
 					address: $('#signup_venue_address').val(),
+                    email: email,
 					user_id: Meteor.userId()
 				});
 				
@@ -155,7 +162,7 @@ Template.signup_slider_wrapper.events({
 				});
 				
 				//set user_id so subscriptions update & refresh is not needed
-				Session.set('new_user_id', Meteor.userId());
+				Session.set('new_user_id', 'triggering');
 				nextPage();
 			});
 		}
@@ -181,7 +188,8 @@ Template.signup_slider_wrapper.events({
 		        var stripeCardToken = response.id;
 			    Meteor.call('updateBillingInfo', stripeCardToken, function() {
 					Meteor.users.update(Meteor.userId(), {$set: {valid_card: true}}); //do this so router knows immediately from mini-mongo
-					Router.go('myVenues');
+                    resetSignupSessions();
+                    Router.go('myVenues');
 				});
 		    } 
 			else {
