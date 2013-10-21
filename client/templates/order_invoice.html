@@ -6,64 +6,73 @@
         </style>
         <title>Conscious Kombucha/{{customerName}} Invoice #{{invoice.order_num}}</title>
 
-        <div id="order-container" style="">
-            <div id="order-invoice">
+        <div class="invoice-button-container">
+            {{#unless invoice.paid}}
+                {{#if invoice.paymentInProgress}}
+                    <div class="customButton">Awaiting...</div>
+                {{else}}
+                    <div class="pay-off-btn customButton">PAY OFF</div>
+                {{/if}}
+            {{/unless}}
+            <div class="generate-pdf-btn customButton"><div class="pdf-icon-24x24"></div></div>
+        </div>
 
-                <div class="order-invoice-top">
-                    INVOICE #{{invoice.order_num}}
-                    <div class="invoice-top-logo">
-						<img class="invoice-item-flavor-icon" src="/images/invoice/top-logo.png" width="335px;"/>
-					</div>
+        <div id="order-invoice">
+
+            <div class="order-invoice-top">
+                INVOICE #{{invoice.order_num}}
+                <div class="invoice-top-logo">
+                    <img class="invoice-item-flavor-icon" src="/images/invoice/top-logo.png" width="335px;"/>
                 </div>
-
-                <div class="order-invoice-info">
-                    Invoice Date: <span>{{requestedDeliveryDate}}</span> <br/>
-                    Delivery Date: <span>{{actualDeliveryDate}}</span> <br/>
-                    Due: <span>${{invoice.total}}</span> <br/>
-                </div>
-
-                <div class="order-invoice-ck-info">
-                    <a style="color: #0069aa;" href="mailto:holly@faceyspacey.com">sales@consciouskombucha.com</a> <br/>
-                    Conscious Kombucha, Inc. <br/>
-                    707 Cathedral Pointe LN <br/>
-                    Santa Barbara, CA 93111 <br/>
-                </div>
-
-                <div class="order-invoice-client-info">
-                    <span class="blue-span">Client:</span> 
-					{{venue.name}} (<a style="color: #0069aa;" href="mailto:{{venue.email}}">{{venue.email}}</a>) - {{venue.address}} 
-                </div>
-
-
-                <table class="invoice-items-table" style="">
-                    <thead>
-                        <th class="invoice-items-table-units">Units</th>
-                        <th class="invoice-items-table-details">Details</th>
-                        <th class="invoice-items-table-rate">Rate</td>
-                        <th class="invoice-items-table-subtotal">Subtotal</th>
-                    </thead>
-                    <tbody>
-                        {{#each invoiceItems}}
-                            {{#if isOneOffInvoice ../invoice.type}}
-                                {{>invoice_item_row_one_off this}}
-                            {{else}}
-                                {{>invoice_item_row this}}
-                            {{/if}}
-                        {{/each}}
-                    </tbody>
-                    <tfoot>
-                        <th></th>
-                        <th></th>
-                        <th class="invoice-items-table-total-label" style="font-size:16px; color: #0069aa; font-weight: bold; padding: 0 10px 0 0;">Total:</th>
-                        <th class="invoice-items-table-total-amount" style="">${{invoice.total}}</th>
-                    </tfoot>
-                </table>
-
-                <div class="invoice-bottom-payable">
-                    Make checks payable to Conscious Kombucha, Inc.
-                </div>
-
             </div>
+
+            <div class="order-invoice-info">
+                Invoice Date: <span>{{requestedDeliveryDate}}</span> <br/>
+                Delivery Date: <span>{{actualDeliveryDate}}</span> <br/>
+                Due: <span>${{invoice.total}}</span> <br/>
+            </div>
+
+            <div class="order-invoice-ck-info">
+                <a style="color: #0069aa;" href="mailto:holly@faceyspacey.com">sales@consciouskombucha.com</a> <br/>
+                Conscious Kombucha, Inc. <br/>
+                707 Cathedral Pointe LN <br/>
+                Santa Barbara, CA 93111 <br/>
+            </div>
+
+            <div class="order-invoice-client-info">
+                <span class="blue-span">Client:</span>
+                {{venue.name}} (<a style="color: #0069aa;" href="mailto:{{venue.email}}">{{venue.email}}</a>) - {{venue.address}}
+            </div>
+
+
+            <table class="invoice-items-table" style="">
+                <thead>
+                    <th class="invoice-items-table-units">Units</th>
+                    <th class="invoice-items-table-details">Details</th>
+                    <th class="invoice-items-table-rate">Rate</td>
+                    <th class="invoice-items-table-subtotal">Subtotal</th>
+                </thead>
+                <tbody>
+                    {{#each invoiceItems}}
+                        {{#if isOneOffInvoice ../invoice.type}}
+                            {{>invoice_item_row_one_off this}}
+                        {{else}}
+                            {{>invoice_item_row this}}
+                        {{/if}}
+                    {{/each}}
+                </tbody>
+                <tfoot>
+                    <th></th>
+                    <th></th>
+                    <th class="invoice-items-table-total-label" style="font-size:16px; color: #0069aa; font-weight: bold; padding: 0 10px 0 0;">Total:</th>
+                    <th class="invoice-items-table-total-amount" style="">${{invoice.total}}</th>
+                </tfoot>
+            </table>
+
+            <div class="invoice-bottom-payable">
+                Make checks payable to Conscious Kombucha, Inc.
+            </div>
+
         </div>
 </template>
 

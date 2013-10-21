@@ -72,10 +72,12 @@ VenueModel = function(doc){
 
     this.sendDeliveryMessages = function(invoiceId){
         var invoice = Invoices.findOne(invoiceId),
-            adminMessage = Template.admin_delivery_message({invoice: invoice, venue: this, user: this.user()}),
-            customerMessage = '';
-        Meteor.call('sendAdminEmail', this.user().getEmail(), 'Order delivered: #'+invoice.order_num, adminMessage, function(err, res){});
-        Meteor.call('sendCustomerEmail', this.user().getEmail(), 'Order delivered: #'+invoice.order_num, customerMessage, function(err, res){});
+            user = this.user(),
+            neededObjects = {invoice: invoice, venue: this, user: user},
+            adminMessage = Template.admin_delivery_message(neededObjects),
+            customerMessage = Template.client_delivery_message(neededObjects);
+        Meteor.call('sendAdminEmail', user.getEmail(), 'Order delivered: #'+invoice.order_num, adminMessage, function(err, res){});
+        Meteor.call('sendCustomerEmail', user.getEmail(), 'Order delivered: #'+invoice.order_num, customerMessage, function(err, res){});
     }
 
     this.lastDeliveryDate = function(payment_day){
@@ -136,7 +138,6 @@ VenueModel = function(doc){
 			
         this.createInvoiceItems(flavorRows, invoiceId);
         this.chargeCustomer(invoiceId);
-        this.sendDeliveryMessages(invoiceId);
 
         return invoiceId;
     };
@@ -220,9 +221,16 @@ VenueModel = function(doc){
 	};
 	
 	this.chargeCustomer = function(invoiceId) {
+        var self = this;
 		if(this.user().stripe_customer_token != undefined) {
             Meteor.call('chargeCustomer', this.user(), invoiceId, function(error, result){
-                Invoices.update(invoiceId, {$set: {paymentInProgress: false}});
+                Session.set('new_user_id', 'trigger');
+                Meteor.setTimeout( function(){
+                    Session.set('new_user_id', null);
+                    return Invoices.update(invoiceId, {$set: {paymentInProgress: false}}, function(){
+                        self.sendDeliveryMessages(invoiceId);
+                    });
+                }, 3000);
             });
 		}
 		else {

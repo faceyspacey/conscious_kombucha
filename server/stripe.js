@@ -43,9 +43,9 @@ Meteor.methods({
 			Fiber(function() {
 				if(error != undefined) {
 					Meteor.users.update(userId, {$set: {valid_card: false}});
-                   	Invoices.update(invoice._id, {$set: {error: error}});
+                   	Invoices.update(invoice._id, {$set: {payment_failed: true, error: error}});
 				}
-				else Invoices.update(invoice._id, {$set: {paid: true}});
+				else Invoices.update(invoice._id, {$set: {payment_failed: false, paid: true}});
             }).run();         
         });
 

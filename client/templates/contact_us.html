@@ -19,6 +19,15 @@
         <form class="styled-form" id="contactUsForm" name="contactUsForm">
 
             <div class="form-row">
+                <label for="contactForm_venue">Venue:</label>
+                <select id="contactForm_venue" class="styled-select">
+                    {{#each venues}}
+                    <option value="{{_id}}">{{name}}</option>
+                    {{/each}}
+                </select>
+            </div>
+
+            <div class="form-row">
                 <label for="contactForm_type">Subject:</label>
                 <select id="contactForm_type" class="styled-select">
                     {{#each messageTypes}}

@@ -20,7 +20,8 @@ InvoiceModel = function(doc){
     this.defaultValues = {
 		order_num: 0,
 		keg_quantity: 0, 
-        total: 0, 
+        total: 0,
+        payment_failed: false,
 		paid: false
     };
 
@@ -57,6 +58,11 @@ InvoiceModel = function(doc){
 
 	this.items = function(){
         return InvoiceItems.find({invoice_id: this._id});
+    };
+
+    this.typeName = function() {
+        if(this.type == 'one_off') return 'One Off Order';
+        else return 'Subscription ('+moment(this.requested_delivery_date).format('ddd')+')'; //this.payment_cycle.substr(0, 1).toUpperCase() + this.payment_cycle.substr(1)
     };
 
 	this.paymentPeriodType = function() {

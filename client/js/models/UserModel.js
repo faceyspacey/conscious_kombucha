@@ -2,7 +2,7 @@ UserModel = function(doc){
     this.collectionName = 'Users';
 
 	this.getEmail = function() {
-		return this.emails[0].address;
+		return this.emails ? this.emails[0].address : '';
 	};
 
     this.getAvatar = function(){

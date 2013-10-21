@@ -1,8 +1,10 @@
 
 #order-container {
-    width: 100%;
+    display: block;
+    width: 726px;
+    margin: 0px auto;
     padding: 0;
-    margin: 0;
+    position:relative;
 }
 
 #order-invoice {
@@ -10,12 +12,36 @@
     text-align: left;
     position: relative;
     width: 670px;
-    margin: 40px auto;
+    margin: 10px auto 40px auto;
     padding: 25px;
     border: 3px solid #0069aa;
     box-shadow: -3px 3px 10px -2px rgba(0,0,0,0.4);
     -webkit-box-shadow: -3px 3px 10px -2px rgba(0,0,0,0.4);
     -moz-box-shadow: -3px 3px 10px -2px rgba(0,0,0,0.4);
+}
+
+.invoice-button-container {
+    display: block;
+    position: relative;
+    top: 10px;
+    right: 0;
+    height: 30px;
+    width: 726px;
+    margin: 10px auto 30px auto;
+    padding: 0;
+}
+.invoice-button-container .customButton {
+    height: 24px;
+    display: inline-block;
+    float: right;
+    margin: 0 10px;
+}
+
+.pdf-icon-24x24 {
+    width: 24px;
+    height: 24px;
+    background: url('/images/icons/pdf_icon.png') no-repeat center;
+    background-size: contain;
 }
 
 .invoice-top-logo {

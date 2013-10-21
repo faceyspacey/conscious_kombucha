@@ -18,6 +18,9 @@ Template.contact_us_form.helpers({
         var types = App.messageTypes;
         delete types[2];
         return _.values(types);
+    },
+    venues: function(){
+        return Venues.find({user_id: Meteor.userId()}).fetch();
     }
 });
 
@@ -26,14 +29,14 @@ Template.contact_us_form.events({
         var message_id = this.save({
             user_id: Meteor.userId(),
             from: Meteor.userId() ? Meteor.user().getEmail() : $('#contactForm_email').val(),
+            venue_id: $('#contactForm_venue').val(),
             type: $('#contactForm_type').val(),
-            content: $('#contactForm_content').val(),
+            content: $('#contactForm_content').val()
         });
 
 
         if( Messages.findOne(message_id) ){
             this.send(message_id);
-            $('#contactForm_type').val(1);
             $('#contactForm_content').val('');
             Router.go('myProfile');
             alert('Thank you for your feedback. We will response as soon as possible.');

@@ -32,17 +32,17 @@ Router.map(function() {
         },
         data: {}
     });
+
+
+    /* ----- Login-required pages ----- */
     this.route('order', {
         path: '/order/:order_num',
         template: 'page_order_invoice',
         controller: 'OrdersController',
         data: function () {
-	        return {invoice: Invoices.findOne({order_num: parseInt(this.params.order_num)})};
-	    }
+            return {invoice: Invoices.findOne({order_num: parseInt(this.params.order_num)})};
+        }
     });
-
-
-    /* ----- Login-required pages ----- */
     this.route('myProfile', {
         path: '/myProfile',
         template: 'page_profile',
@@ -185,8 +185,8 @@ Router.configure({
 		mobile: {loginReq: false, roles: []},
 		
         home: {loginReq: false, roles: []},
-        order: {loginReq: false, roles: []},
 
+        order: {loginReq: false, roles: ['client', 'admin']},
         myProfile: {loginReq: true, roles: ['client', 'admin']},
         myProfileEdit: {loginReq: true, roles: ['client', 'admin']},
         myInvoices: {loginReq: true, roles: ['client', 'admin']},
@@ -233,11 +233,11 @@ Router.configure({
 		//block user from login-required pages
         if(pages[routeName].loginReq == true && !Meteor.user()){
             this.render('page_forbidden');
-            return this.stop();
+            return;
         }
 
 		//force user to go to billing page if card is invalid
-		if(Meteor.user() && !Meteor.user().valid_card && this.context.route.name != 'mobile' && this.context.route.name != 'home') {
+		if(Meteor.user() && Meteor.user().valid_card == false && ['mobile', 'home', 'order'].indexOf(this.context.route.name) == -1) {
 			Router.go('mobile');
 			Meteor.setTimeout(function() {
 				Session.set('signup_step', 4);
@@ -269,7 +269,11 @@ FlashMessages.configure({
 
 Handlebars.registerHelper('isDesktopSite', function() {
 	if(!Router.current()) return false;
-	
+
 	var controller = Router.current().route.options.controller;
 	return controller != 'OrdersController' && controller != 'MobileController';
+});
+
+Handlebars.registerHelper('getInvoiceLink', function(invoice) {
+    return Router.url('order', {order_num: invoice.order_num});
 });
