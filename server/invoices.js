@@ -21,6 +21,6 @@ Invoices.allow({
     },
     remove: function(userId, doc) {
         return Roles.userIsInRole(userId, ['admin']);
-    },
-    fetch: ['user_id, created_at, updated_at, order_num']
+    }
+    //fetch: ['user_id, created_at, updated_at, order_num']
 });

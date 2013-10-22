@@ -1,5 +1,5 @@
 Stripe = StripeAPI('sk_test_fN3eVl4efa58FJLMbPXFF56w');
-Fiber = Npm.require('fibers');
+Fiber = Npm.require("fibers");
 
 Meteor.methods({
 	updateBillingInfo: function(stripeCardToken) {
@@ -32,8 +32,7 @@ Meteor.methods({
 	},
     chargeCustomer: function(user, invoiceId) {
         var invoice = Invoices.findOne(invoiceId),
-			userId = Meteor.userId(),
-			error, result;
+			userId = Meteor.userId();
 
         Stripe.charges.create({
             amount: invoice.total*100,
@@ -44,11 +43,13 @@ Meteor.methods({
 				if(error != undefined) {
 					Meteor.users.update(userId, {$set: {valid_card: false}});
                    	Invoices.update(invoice._id, {$set: {payment_failed: true, error: error}});
-				}
+                }
 				else Invoices.update(invoice._id, {$set: {payment_failed: false, paid: true}});
-            }).run();         
+            }).run();
         });
 
-        return {error: error, result: response};
+        //var c = Fiber.yield();
+
+        return true;
     }
 });

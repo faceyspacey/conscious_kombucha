@@ -43,13 +43,11 @@ InvoiceModel = function(doc){
 		Meteor.call('sendCustomerEmail', this.user().getEmail(), 'Message sent in regards to Order #'+this.order_num, 'Your message: <br/>'+message, function(err, res){});
 	};
     this.sendChargeMessage = function() {
-        var user = this.user(),
-            venue = this.venue(),
-            neededObjects = {invoice: this, venue: venue, user: user},
-            adminMessage = Template.admin_delivery_message(neededObjects),
-            customerMessage = Template.client_delivery_message(neededObjects);
-        Meteor.call('sendAdminEmail', user.getEmail(), 'Payment attempt of Invoice: #'+this.order_num, adminMessage, function(err, res){});
-        Meteor.call('sendCustomerEmail', user.getEmail(), 'Payment attempt of Invoice: #'+this.order_num, customerMessage, function(err, res){});
+        this.refresh();
+        var adminMessage = Template.admin_delivery_message(this),
+            customerMessage = Template.client_delivery_message(this);
+        Meteor.call('sendAdminEmail', this.user().getEmail(), 'Payment attempt of Invoice: #'+this.order_num, adminMessage, function(err, res){});
+        Meteor.call('sendCustomerEmail', this.user().getEmail(), 'Payment attempt of Invoice: #'+this.order_num, customerMessage, function(err, res){});
     };
 
     this.payItOff = function() {
@@ -97,7 +95,8 @@ InvoiceModel = function(doc){
         return moment(this.requested_delivery_date).format("ddd, MMM Do, h:mm a");
     };
 	
-	this.actualDeliveryDate = function() {
+	this.actualDeliveryDate = function(){
+        //console.log('actual_delivery_date: '+this.actual_delivery_date);
 		return this.actual_delivery_date ? moment(this.actual_delivery_date).format("ddd, MMM Do, h:mm a") : 'Not Delivered Yet';
 	};
 	
@@ -106,6 +105,7 @@ InvoiceModel = function(doc){
 	};
 	                                                                                       
 	this.paidInfo = function() {
+        //console.log('paid: '+this.paid+', payment_failed:'+this.payment_failed, this);
 		if(this.paid) return 'PAID';
 		if(this.payment_failed) return 'FAILED';
 		if(!this.is_stripe_customer && !this.paid) return 'AWAITING CHECK';

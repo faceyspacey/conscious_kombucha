@@ -72,12 +72,11 @@ VenueModel = function(doc){
 
     this.sendDeliveryMessages = function(invoiceId){
         var invoice = Invoices.findOne(invoiceId),
-            user = this.user(),
-            neededObjects = {invoice: invoice, venue: this, user: user},
-            adminMessage = Template.admin_delivery_message(neededObjects),
-            customerMessage = Template.client_delivery_message(neededObjects);
-        Meteor.call('sendAdminEmail', user.getEmail(), 'Order delivered: #'+invoice.order_num, adminMessage, function(err, res){});
-        Meteor.call('sendCustomerEmail', user.getEmail(), 'Order delivered: #'+invoice.order_num, customerMessage, function(err, res){});
+            adminMessage = Template.admin_delivery_message(invoice),
+            customerMessage = Template.client_delivery_message(invoice);
+        console.log(invoice);
+        Meteor.call('sendAdminEmail', invoice.user().getEmail(), 'Order delivered: #'+invoice.order_num, adminMessage, function(err, res){});
+        Meteor.call('sendCustomerEmail', invoice.user().getEmail(), 'Order delivered: #'+invoice.order_num, customerMessage, function(err, res){});
     }
 
     this.lastDeliveryDate = function(payment_day){
@@ -135,9 +134,9 @@ VenueModel = function(doc){
 	            delivered: true
 	        }),
 			flavorRows = this.kegsForSubscription(subscriptionAttributes.payment_day);
-			
+	    var self = this;
         this.createInvoiceItems(flavorRows, invoiceId);
-        this.chargeCustomer(invoiceId);
+        this.chargeCustomer(invoiceId, function(){ self.sendDeliveryMessages(invoiceId) });
 
         return invoiceId;
     };
@@ -224,14 +223,13 @@ VenueModel = function(doc){
         var self = this;
 		if(this.user().stripe_customer_token != undefined) {
             Meteor.call('chargeCustomer', this.user(), invoiceId, function(error, result){
-                Session.set('new_user_id', 'trigger');
-                Meteor.setTimeout( function(){
-                    Session.set('new_user_id', null);
-                    return Invoices.update(invoiceId, {$set: {paymentInProgress: false}}, function(){
+                console.log(result);
+                Invoices.update(invoiceId, {$set: {paymentInProgress: false}}, function(){
+                    setTimeout(function(){
                         if( typeof callback == 'function')
                             callback.call();
-                    });
-                }, 3000);
+                    }, 5000);
+                });
             });
 		}
 		else {

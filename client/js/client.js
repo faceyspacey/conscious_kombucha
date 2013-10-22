@@ -212,8 +212,8 @@ Router.configure({
         kegeratorInstalls: {loginReq: true, roles: ['admin']}
     },
 
+    loadingTemplate: 'page_loading',
     notFoundTemplate: 'page_forbidden',
-    /*loadingTemplate: 'loading',*/
 
     renderTemplates: {
         'header': { to: 'header' },
@@ -221,6 +221,7 @@ Router.configure({
     },
 
     waitOn: function(){
+        //$('body').prepend('<div class="page-loading-bg"><div class="page-loading"></div></div>');
         return Meteor.subscribe('users');
     },
 
@@ -279,6 +280,11 @@ Handlebars.registerHelper('isDesktopSite', function() {
 	return controller != 'OrdersController' && controller != 'MobileController';
 });
 
-Handlebars.registerHelper('getInvoiceLink', function(invoice) {
-    return Router.url('order', {order_num: invoice.order_num});
+Handlebars.registerHelper('getInvoiceLink', function() {
+    return Router.url('order', {order_num: this.order_num});
+});
+
+
+Handlebars.registerHelper('antiQuote', function() {
+    return new Date().getTime();
 });
