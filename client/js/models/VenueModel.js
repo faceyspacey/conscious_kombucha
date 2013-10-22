@@ -143,7 +143,7 @@ VenueModel = function(doc){
     };
 
 	this.placeOrder = function(orderedKegs, deliveryDate) {	
-		var alertMessage;
+		var alertMessage, self = this;
 			
 		if(alertMessage = this.orderedMoreThanAvailable(orderedKegs)) {
 			alert(alertMessage)
@@ -152,7 +152,7 @@ VenueModel = function(doc){
 
 		var invoiceId = this.createInvoice({type: 'one_off', delivered: false, requested_delivery_date: deliveryDate});
 		this.createInvoiceItems(orderedKegs, invoiceId, true);
-		this.chargeCustomer(invoiceId);
+		this.chargeCustomer(invoiceId, function(){ self.sendDeliveryMessages(invoiceId); });
 			
 		return invoiceId;
 	};
@@ -220,7 +220,7 @@ VenueModel = function(doc){
 		}});
 	};
 	
-	this.chargeCustomer = function(invoiceId) {
+	this.chargeCustomer = function(invoiceId, callback) {
         var self = this;
 		if(this.user().stripe_customer_token != undefined) {
             Meteor.call('chargeCustomer', this.user(), invoiceId, function(error, result){
@@ -228,7 +228,8 @@ VenueModel = function(doc){
                 Meteor.setTimeout( function(){
                     Session.set('new_user_id', null);
                     return Invoices.update(invoiceId, {$set: {paymentInProgress: false}}, function(){
-                        self.sendDeliveryMessages(invoiceId);
+                        if( typeof callback == 'function')
+                            callback.call();
                     });
                 }, 3000);
             });

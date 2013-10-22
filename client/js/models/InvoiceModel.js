@@ -40,15 +40,28 @@ InvoiceModel = function(doc){
 	this.addReplyMessage = function(message) {
 		Invoices.update(this._id, {$push: {messages: message}});
 		Meteor.call('sendAdminEmail', this.user().getEmail(), 'Reply for Invoice: #'+this.order_num, message, function(err, res){});
-		Meteor.call('sendCustomerEmail', this.user().getEmail(), 'Message sent in regards to Order #'+this.order_num, 'Your message: <br/><br/>'+message, function(err, res){});
+		Meteor.call('sendCustomerEmail', this.user().getEmail(), 'Message sent in regards to Order #'+this.order_num, 'Your message: <br/>'+message, function(err, res){});
 	};
+    this.sendChargeMessage = function() {
+        var user = this.user(),
+            venue = this.venue(),
+            neededObjects = {invoice: this, venue: venue, user: user},
+            adminMessage = Template.admin_delivery_message(neededObjects),
+            customerMessage = Template.client_delivery_message(neededObjects);
+        Meteor.call('sendAdminEmail', user.getEmail(), 'Payment attempt of Invoice: #'+this.order_num, adminMessage, function(err, res){});
+        Meteor.call('sendCustomerEmail', user.getEmail(), 'Payment attempt of Invoice: #'+this.order_num, customerMessage, function(err, res){});
+    };
 
     this.payItOff = function() {
         if( this.paid )
             return;
 
+        var self = this;
+
         this.save({paymentInProgress: true});
-        this.venue().chargeCustomer(this._id);
+        this.venue().chargeCustomer(this._id, function(){
+            self.sendChargeMessage();
+        });
     };
 
 	this.invoiceItems = function(condition){

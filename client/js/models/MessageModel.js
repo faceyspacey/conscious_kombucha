@@ -23,6 +23,9 @@ MessageModel = function(doc){
     this.getType = function(){
         return App.messageTypes[this.type] || {};
     };
+    this.getSubject = function(){
+        return App.messageTypes[this.type] ? App.messageTypes[this.type].subject : '';
+    };
 
     this.user = function(){
         return Meteor.users.findOne(this.user_id);

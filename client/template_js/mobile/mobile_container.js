@@ -139,8 +139,8 @@ Template.signup_slider_wrapper.events({
 					alert('Oops! Something went wrong. Please try again.');
 					return;
 				}
-				
-				//insert & link venue to user
+
+                //insert & link venue to user
 				var venue_id = Venues.insert({
 					name: $('#signup_venue_name').val(),
 					address: $('#signup_venue_address').val(),
@@ -160,7 +160,9 @@ Template.signup_slider_wrapper.events({
 		            type: 1,
 		            price: App.kegTypes[1].price
 				});
-				
+
+                Meteor.user().sendSingupEmails(venue_id);
+
 				//set user_id so subscriptions update & refresh is not needed
 				Session.set('new_user_id', 'triggering');
 				nextPage();

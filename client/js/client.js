@@ -220,7 +220,12 @@ Router.configure({
         'footer': { to: 'footer' }
     },
 
+    waitOn: function(){
+        return Meteor.subscribe('users');
+    },
+
     before: function() {
+
         var pages = Router.options.pages;
         var routeName = this.context.route.name;
 
