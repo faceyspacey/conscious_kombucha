@@ -228,8 +228,9 @@ VenueModel = function(doc){
                     setTimeout(function(){
                         if( typeof callback == 'function')
                             callback.call();
-                    }, 5000);
+                    }, 2000);
                 });
+
             });
 		}
 		else {

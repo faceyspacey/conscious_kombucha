@@ -5,9 +5,10 @@ UserModel = function(doc){
 		return this.emails ? this.emails[0].address : '';
 	};
 
-    this.sendSingupEmails = function(venue){
-        var content = Template.admin_signup_message(this);
-        Meteor.call('sendAdminEmail', this.getEmail(), 'Order delivered: #'+invoice.order_num, adminMessage, function(err, res){});
+    this.sendSignupEmails = function(venue_id){
+        var venue = Venues.findOne(venue_id),
+            content = Template.admin_signup_message(venue);
+        Meteor.call('sendAdminEmail', this.getEmail(), 'Client Signup: '+this.profile.name, content, function(err, res){});
     }
 
     this.getAvatar = function(){

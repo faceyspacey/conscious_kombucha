@@ -161,7 +161,7 @@ Template.signup_slider_wrapper.events({
 		            price: App.kegTypes[1].price
 				});
 
-                Meteor.user().sendSingupEmails(venue_id);
+                Meteor.user().sendSignupEmails(venue_id);
 
 				//set user_id so subscriptions update & refresh is not needed
 				Session.set('new_user_id', 'triggering');
