@@ -19,7 +19,7 @@ Flavors = new Meteor.Collection('flavors', {
 
 Invoices = new Meteor.Collection('invoices', {
     reactive: true,
-    transform: function(doc){ return new InvoiceModel(doc); },
+    transform: function(doc){ return new InvoiceModel(doc); }
 });
 
 InvoiceItems = new Meteor.Collection("invoice_items", {
@@ -34,7 +34,7 @@ Messages = new Meteor.Collection("messages", {
 
 
 Deps.autorun(function() {
-	console.log('user signed up!');
+	//console.log('user signed up!');
 	
 	var user_id = Session.get('new_user_id'); //this simply triggers reactivity so we have the right subscriptions once signed up
 	Meteor.subscribe('users');

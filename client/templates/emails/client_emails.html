@@ -1,0 +1,40 @@
+
+<!-- Contact Message -->
+
+<template name="client_contact_message">
+    <div style="padding: 0; margin:5px auto; font-size: 14px; overflow: hidden; width:450px; border-radius: 8px; border:1px solid #0069aa; background: #f0f0f0; color: DimGrey; text-shadow: 1px 1px 1px white;">
+        {{>venue_info this.venue}}
+        {{>message_info this}}
+    </div>
+</template>
+
+<!-- Delivery Message -->
+
+<template name="client_delivery_message">
+    <div style="padding: 0; margin:5px auto; font-size: 14px; overflow: hidden; width:450px; border-radius: 8px; border:1px solid #0069aa; background: #f0f0f0; color: DimGrey; text-shadow: 1px 1px 1px white;">
+        {{>venue_info this.venue}}
+        {{>invoice_info this}}
+    </div>
+</template>
+
+<!-- Install Messages -->
+
+<template name="client_kegerator_installed_message">
+    <div style="padding: 0; margin:5px auto; font-size: 14px; overflow: hidden; width:450px; border-radius: 8px; border:1px solid #0069aa; background: #f0f0f0; color: DimGrey; text-shadow: 1px 1px 1px white;">
+        {{>venue_info this}}
+
+        <div style="border-bottom:1px solid #c7c7c7;">
+            <h2 style="padding:5px; margin:0; color: #0069aa; background: white;">Kegerator Installed</h2>
+        </div>
+    </div>
+</template>
+
+<template name="client_tap_installed_message">
+    <div style="padding: 0; margin:5px auto; font-size: 14px; overflow: hidden; width:450px; border-radius: 8px; border:1px solid #0069aa; background: #f0f0f0; color: DimGrey; text-shadow: 1px 1px 1px white;">
+        {{>venue_info this}}
+
+        <div style="border-bottom:1px solid #c7c7c7;">
+            <h2 style="padding:5px; margin:0; color: #0069aa; background: white;">Double Tap Installed</h2>
+        </div>
+    </div>
+</template>

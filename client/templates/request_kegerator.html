@@ -1,0 +1,44 @@
+<template name="page_request_kegerator">
+    <div class="page-background" id="kegeratorRequests">
+
+        <div class="top-back-btn customButton-blue"> Back to Kegs </div>
+        <h1 class="page_title" style="margin-bottom:25px;">Request Kegerator or Tap</h1>
+
+        <div class="request-kegerator-box">
+            <h2 class="subtitle" style="margin: 0 auto 25px 0;">Venue</h2>
+            <div class="req-kege-info-row">Name: <span class="info">{{venue.name}}</span></div>
+            <div class="req-kege-info-row">Address: <span class="info">{{venue.name}}</span></div>
+            <div class="req-kege-info-row">Number of set kegs: <span class="info">{{venue.kegs.count}} keg(s)</span></div>
+            <div class="req-kege-info-row">Installed Kegerators: <span class="info">{{venue.kegerator_count}} kegerator(s)</span></div>
+            <div class="req-kege-info-row">Installed Double Taps: <span class="info">{{venue.tap_count}} double tap(s)</span></div>
+        </div>
+
+        <div class="request-kegerator-box">
+            <h2 class="subtitle" style="margin: 0 auto 25px 0;">Actions</h2>
+
+            <div class="req-kege-action-box">
+                {{#if venue.kegeratorInstalled}}
+                    <div class="request-kegerator-btn customButton-blue"> Request Kegerator </div>
+                {{else}}
+                    <h3>Waiting on <b>kegerator</b> installation</h3>
+                {{/if}}
+                <div class="req-kege-info-row">Last Request: <span class="info">{{venue.timeVerify 'kegerator_request_date'}}</span></div>
+                <div class="req-kege-info-row">Last Install: <span class="info">{{venue.timeVerify 'kegerator_install_date'}}</span></div>
+            </div>
+
+            <div class="req-kege-action-box">
+                {{#if venue.tapInstalled}}
+                    <div class="request-tap-btn customButton-blue"> Add Double Tap </div>
+                {{else}}
+                    <h3>Waiting on <b>tap</b> installation</h3>
+                {{/if}}
+                <div class="req-kege-info-row">Last Request: <span class="info">{{venue.timeVerify 'tap_request_date'}}</span></div>
+                <div class="req-kege-info-row">Last Install: <span class="info">{{venue.timeVerify 'tap_install_date'}}</span></div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+</template>

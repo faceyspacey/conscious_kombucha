@@ -1,0 +1,79 @@
+
+<!-- Contact Message -->
+
+<template name="admin_contact_message">
+    <div style="padding: 0; margin:5px auto; font-size: 14px; overflow: hidden; width:450px; border-radius: 8px; border:1px solid #0069aa; background: #f0f0f0; color: DimGrey; text-shadow: 1px 1px 1px white;">
+        {{>client_info this.user}}
+        {{>venue_info this.venue}}
+        {{>message_info this}}
+    </div>
+</template>
+
+<!-- Delivery Message -->
+
+<template name="admin_delivery_message">
+    <div style="padding: 0; margin:5px auto; font-size: 14px; overflow: hidden; width:450px; border-radius: 8px; border:1px solid #0069aa; background: #f0f0f0; color: DimGrey; text-shadow: 1px 1px 1px white;">
+        {{>client_info this.user}}
+        {{>venue_info this.venue}}
+        {{>invoice_info this}}
+    </div>
+</template>
+
+<!-- Signup Message -->
+
+<template name="admin_signup_message">
+    <div style="padding: 0; margin:5px auto; font-size: 14px; overflow: hidden; width:450px; border-radius: 8px; border:1px solid #0069aa; background: #f0f0f0; color: DimGrey; text-shadow: 1px 1px 1px white;">
+        {{>client_info this.user}}
+        {{>venue_info this}}
+        </div>
+    </div>
+</template>
+
+<!-- Request Messages -->
+
+<template name="admin_request_tap_message">
+    <div style="padding: 0; margin:5px auto; font-size: 14px; overflow: hidden; width:450px; border-radius: 8px; border:1px solid #0069aa; background: #f0f0f0; color: DimGrey; text-shadow: 1px 1px 1px white;">
+        {{>client_info this.user}}
+        {{>venue_info this}}
+
+        <div style="border-bottom:1px solid #c7c7c7;">
+            <h2 style="padding:5px; margin:0; color: #0069aa; background: white;">Double Tap needed to install.</h2>
+        </div>
+    </div>
+</template>
+
+<template name="admin_request_kegerator_message">
+    <div style="padding: 0; margin:5px auto; font-size: 14px; overflow: hidden; width:450px; border-radius: 8px; border:1px solid #0069aa; background: #f0f0f0; color: DimGrey; text-shadow: 1px 1px 1px white;">
+        {{>client_info this.user}}
+        {{>venue_info this}}
+
+        <div style="border-bottom:1px solid #c7c7c7;">
+            <h2 style="padding:5px; margin:0; color: #0069aa; background: white;">Kegerator needed to install.</h2>
+        </div>
+    </div>
+</template>
+
+
+<!-- Install Messages -->
+
+<template name="admin_kegerator_installed_message">
+    <div style="padding: 0; margin:5px auto; font-size: 14px; overflow: hidden; width:450px; border-radius: 8px; border:1px solid #0069aa; background: #f0f0f0; color: DimGrey; text-shadow: 1px 1px 1px white;">
+        {{>client_info this.user}}
+        {{>venue_info this}}
+
+        <div style="border-bottom:1px solid #c7c7c7;">
+            <h2 style="padding:5px; margin:0; color: #0069aa; background: white;">Kegerator Installed</h2>
+        </div>
+    </div>
+</template>
+
+<template name="admin_tap_installed_message">
+    <div style="padding: 0; margin:5px auto; font-size: 14px; overflow: hidden; width:450px; border-radius: 8px; border:1px solid #0069aa; background: #f0f0f0; color: DimGrey; text-shadow: 1px 1px 1px white;">
+        {{>client_info this.user}}
+        {{>venue_info this}}
+
+        <div style="border-bottom:1px solid #c7c7c7;">
+            <h2 style="padding:5px; margin:0; color: #0069aa; background: white;">Double Tap Installed</h2>
+        </div>
+    </div>
+</template>

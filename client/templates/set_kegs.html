@@ -15,9 +15,9 @@
             </div>
 
             <p class="note">
-                You have <b>{{{venue.getKegerators.count}}} kegerator(s)</b>
-                with <b>{{{venue.getKegeratorTaps}}} tap(s)</b>. You can request more kegerators here:
-                <a href="javascript: Router.go('requestKegerator', {id: '{{venue_id}}' });">Request Kegerator</a>
+                You have <b>{{venue.kegerator_count}} kegerator(s)</b>
+                with <b>{{venue.tap_count}} tap(s)</b>. You can request more kegerators or taps here:
+                <a href="javascript: Router.go('requestKegerator', {id: '{{venue_id}}' });">Request Kegerator or Tap</a>
             </p>
 
         </div>

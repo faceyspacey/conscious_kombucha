@@ -53,6 +53,9 @@ Model = {
 	time: function(field) {
 		return moment(this[field]).format("ddd, MMM Do, h:mm a");
 	},
+    timeVerify: function(field) {
+        return (this[field] && this[field].getTime() > 0) ? this.time(field) : 'Not yet';
+    },
 	extend: function(doc) {
 		_.extend(this, this.defaultValues, doc);
 	}

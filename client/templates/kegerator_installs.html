@@ -20,22 +20,22 @@
                     <td>{{address}}</td>
 
                     <td>
-						<div class="kegerator-row"><span>{{tap_count}} Tap(s)</span> and <span>{{kegerator_count}} Kegerator(s)</span></div>
+						<div class="kegerator-row"><span class="info"><b>{{tap_count}}</b> Double Tap(s)</span> and <span class="info"><b>{{kegerator_count}}</b> Kegerator(s)</span></div>
 					</td>
 					
                     <td>
 						{{#if kegeratorInstalled}}
-							<div class="kegerator-row">Last Install: <br /> {{time kegerator_install_date}}</div>
+							<div class="kegerator-row">Last Install: <br /> <span class="info">{{timeVerify 'kegerator_install_date'}}</span></div>
 						{{else}}
-							<div class="kegerator-row">Requested on: <br /> {{time kegerator_request_date}}</div>
+							<div class="kegerator-row">Requested on: <br /> <span class="info">{{timeVerify 'kegerator_request_date'}}</span></div>
 							<div class="kegerator-installed-button customButton-blue">Installed</div>
 						{{/if}}
 					</td>
 					<td>
 						{{#if tapInstalled}}
-							<div class="kegerator-row">Last Install: <br /> {{time tap_install_date}}</div>
+							<div class="kegerator-row">Last Install: <br /> <span class="info">{{timeVerify 'tap_install_date'}}</span></div>
 						{{else}}
-							<div class="kegerator-row">Requested on: <br /> {{time tap_request_date}}</div>
+							<div class="kegerator-row">Requested on: <br /> <span class="info">{{timeVerify 'tap_request_date'}}</span></div>
 							<div class="tap-installed-button customButton-blue">Installed</div>
 						{{/if}}
 					</td>

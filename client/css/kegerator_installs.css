@@ -2,3 +2,7 @@
 	text-align: center;
 	text-shadow: 1px 1px white;
 }
+
+.kegerator-row span.info {
+    color: #0069aa;
+}

@@ -23,8 +23,10 @@ VenueModel = function(doc){
 	this.defaultValues = {
 		kegerator_count: 0,
 		tap_count: 0,
+        kegerator_install_date: new Date(0),
+        tap_install_date: new Date(0),
 		kegerator_request_date: new Date,
-		tap_request_date: new Date,
+		tap_request_date: new Date(0),
         delivery_date : new Date(0),
 	};
 
@@ -36,11 +38,11 @@ VenueModel = function(doc){
     };
 
 	this.kegeratorInstalled = function() {
-		return this.kegerator_install_date > this.kegerator_request_date;
+		return this.kegerator_install_date >= this.kegerator_request_date;
 	};
 	
 	this.tapInstalled = function() {
-		return this.tap_install_date > this.tap_request_date;
+		return this.tap_install_date >= this.tap_request_date;
 	};
 		
     this.user = function(){
@@ -70,11 +72,47 @@ VenueModel = function(doc){
 		});
     };
 
+    this.requestKegerator = function(){
+        Venues.update(this._id, {$set: {kegerator_request_date: new Date}});
+        this.sendRequestMessage('Kegerator');
+    };
+    this.requestDoubleTap = function(){
+        Venues.update(this._id, {$set: {tap_request_date: new Date}});
+        this.sendRequestMessage('Double Tap Tower');
+    };
+
+    this.sendRequestMessage = function(requested){
+        if( requested == 'Kegerator' )
+            var adminMessage = Template.admin_request_kegerator_message(this);
+        else
+            var adminMessage = Template.admin_request_tap_message(this);
+        Meteor.call('sendAdminEmail', this.user().getEmail(), requested+' needed to install at'+this.name, adminMessage, function(err, res){});
+    }
+
+    this.setKegeratorInstalled = function(){
+        Venues.update(this._id, {$set: {kegerator_install_date: new Date}, $inc: {kegerator_count: 1}});
+        this.sendInstallMessages('Kegerator');
+    }
+    this.setDoubleTapInstalled = function(){
+        Venues.update(this._id, {$set: {tap_install_date: new Date}, $inc: {tap_count: 1}});
+        this.sendInstallMessages('Double Tap Tower');
+    }
+    this.sendInstallMessages = function(requested){
+        if( requested == 'Kegerator' ) {
+            var adminMessage = Template.admin_kegerator_installed_message(this),
+                clientMessage = Template.client_kegerator_installed_message(this);
+        } else {
+            var adminMessage = Template.admin_tap_installed_message(this),
+                clientMessage = Template.client_tap_installed_message(this);
+        }
+        Meteor.call('sendAdminEmail', this.user().getEmail(), requested+' installed at '+this.name, adminMessage, function(err, res){});
+        Meteor.call('sendCustomerEmail', this.user().getEmail(), requested+' installed at '+this.name, clientMessage, function(err, res){});
+    }
+
     this.sendDeliveryMessages = function(invoiceId){
         var invoice = Invoices.findOne(invoiceId),
             adminMessage = Template.admin_delivery_message(invoice),
             customerMessage = Template.client_delivery_message(invoice);
-        console.log(invoice);
         Meteor.call('sendAdminEmail', invoice.user().getEmail(), 'Order delivered: #'+invoice.order_num, adminMessage, function(err, res){});
         Meteor.call('sendCustomerEmail', invoice.user().getEmail(), 'Order delivered: #'+invoice.order_num, customerMessage, function(err, res){});
     }

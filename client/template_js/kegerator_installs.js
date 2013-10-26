@@ -8,9 +8,9 @@ Template.page_kegerator_installs.helpers({
 
 Template.page_kegerator_installs.events({
     'click .kegerator-installed-button': function() {
-		Venues.update(this._id, {$set: {kegerator_install_date: new Date}, $inc: {kegerator_count: 1}});
+        this.setKegeratorInstalled();
     },
 	'click .tap-installed-button': function() {
-		Venues.update(this._id, {$set: {tap_install_date: new Date}, $inc: {tap_count: 1}});
+        this.setDoubleTapInstalled();
     }
 });

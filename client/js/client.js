@@ -243,13 +243,13 @@ Router.configure({
         }
 
 		//force user to go to billing page if card is invalid
-		if(Meteor.user() && Meteor.user().valid_card == false && ['mobile', 'home', 'order'].indexOf(this.context.route.name) == -1) {
+		if(Meteor.user() && Meteor.user().valid_card == false && ['mobile', 'home', 'order', 'billingInfo'].indexOf(this.context.route.name) == -1) {
 			Router.go('mobile');
 			Meteor.setTimeout(function() {
 				Session.set('signup_step', 4);
 				$('#signup_step_5 p').text('Please supply a new card to pay for past charges.')
 				$('#sliding_page_wrapper').hardwareAnimate({translateX: -1600}, 1, 'easeInBack');
-			}, 0);
+			}, 50);
 			return this.stop();
 		}
 		
@@ -283,7 +283,6 @@ Handlebars.registerHelper('isDesktopSite', function() {
 Handlebars.registerHelper('getInvoiceLink', function() {
     return Router.url('order', {order_num: this.order_num});
 });
-
 
 Handlebars.registerHelper('antiQuote', function() {
     return new Date().getTime();
