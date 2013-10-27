@@ -22,10 +22,10 @@
 
 <template name="flavor_row">
 	<div class="form-row" style="width: 500px; margin: 0 auto 10px;">
-		<label for="quantity_dropdown" style="float:left;">Quantity:</label>
+		<label for="quantity_dropdown" style="float:left; padding:0; line-height: 30px;">Quantity:</label>
 		
 
-        <select class="quantity_dropdown" style="float:left;">
+        <select class="quantity_dropdown styled-select" style="float:left; width: 50px; margin: 0 0 0 5px;">
 			{{#each quantities}}
 				<option value="{{this}}" {{quantitySelected ../quantity}}>{{this}}</option>
 			{{/each}}
@@ -33,21 +33,21 @@
 	
 		<img src="{{flavor_icon}}" style="width:25px; float:left; margin-left:20px;"/>
 	
-		<select class="flavor_dropdown" style="float:left; margin-left:10px; width: 150px; ">
+		<select class="flavor_dropdown styled-select" style="float:left; width: 150px; margin: 0 0 0 10px;">
 			{{#each flavors}}
 				<option value="{{_id}}" {{flavorSelected ../flavor_id}}>{{name}}</option>
 			{{/each}}			
 		</select>
 	
 		{{#if isInRole 'admin'}}
-			<select class="price_dropdown" style="float:left;">
+			<select class="price_dropdown styled-select" style="float:left; width: 80px; margin: 0 0 0 10px;">
 				{{#each prices}}
 					<option value="{{this}}" {{priceSelected ../rate}}>${{this}}</option>
 				{{/each}}
 			</select>
 		
 			{{#if false}} <!-- not needed yet -->
-				<select class="keg_type_dropdown" style="float:left;">
+				<select class="keg_type_dropdown styled-select" style="float:left; padding-top:5px;">
 					{{#each kegTypes}}
 						<option value="{{this}}" {{kegTypeSelected ../keg_type}}>{{this}}</option>
 					{{/each}}
@@ -55,7 +55,7 @@
 			{{/if}}
 		{{/if}}
 		
-		<span style="font-weight:bold; color:#0069aa; display:block; float:left; margin-left:10px;">${{subtotal}}</span>
+		<span style="font-weight:bold; color:#0069aa; display:block; float:left; margin-left:10px; padding:0; line-height: 30px;">${{subtotal}}</span>
 		
 		
 		<div class="remove-keg-btn" style="float:right; background:rgb(245, 82, 82); position:static; display:block; position:relative; top: -3px;"> × </div>
@@ -70,26 +70,27 @@
 	<div id="keg_order_total" style="margin: 50px auto 0px; width:250px; color:#0069aa; font-weight:bold; font-size: 24px;">ORDER TOTAL: ${{total}}</div>
 		
 	<div class="form-row" style="width:460px; margin:20px auto 20px;">
-		<label for="day_dropdown" style="float:left;width: 150px; text-align:left;">Delivery Date:</label>		
-		<select id="day_dropdown" style="float:left;">
+		<label for="day_dropdown" style="float:left; width: 130px; text-align:left; padding:0; line-height: 30px;">Delivery Date:</label>
+		<select id="day_dropdown" class="styled-select" style="float:left; width:50px; margin:0 0 0 5px;">
 			{{#each days}}
 				<option value="{{this}}">{{this}}</option>
 			{{/each}}
 		</select>
 		
-		<select id="month_dropdown" style="float:left;">
+		<select id="month_dropdown" class="styled-select" style="float:left; width:120px; margin:0 0 0 5px;">
 			{{#each months}}
 				<option value="{{index}}">{{name}}</option>
 			{{/each}}
 		</select>
 	
-		<select id="year_dropdown" style="float:left;">
+		<select id="year_dropdown" class="styled-select" style="float:left; width:70px; margin:0 0 0 5px;">
 			{{#each years}}
 				<option value="{{this}}">{{this}}</option>
 			{{/each}}
 		</select>
-	
-		<select id="venue_dropdown" style="float:left;">
+
+        <label for="day_dropdown" style="float:left; width: 130px; text-align:left; padding-top:5px; line-height: 30px;">Target Venue:</label>
+        <select id="venue_dropdown" class="styled-select" style="float:left; width: 250px; margin:5px 0 0 5px;">
 			{{#each venues}}
 				<option value="{{_id}}">{{name}}</option>
 			{{/each}}
