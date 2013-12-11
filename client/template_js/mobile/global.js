@@ -103,6 +103,11 @@ stepTypes = {
 		{template: 'slide_home', title: 'Venue Name'},
 		{template: 'slide_request_upgrades', title: 'Request Upgrades'}
 	],
+    panel_chubby_form: [
+        {template: 'slide_home', title: 'Venue Name'},
+        {template: 'slide_chubby_form', title: 'New Chubby Challenge'},
+        {template: 'slide_challenge_accepted', title: 'Accepted Challenge'},
+    ]
 };
 
 currentStep = 0;

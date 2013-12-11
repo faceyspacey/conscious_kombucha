@@ -1,0 +1,36 @@
+<template name="slide_challenge_accepted">
+    <div id="slide_challenge_accepted" class="mobile_pages">
+        <div class="scrollInner">
+
+            <div style="width:82%; margin: 0 auto;">
+
+                <div class="row" style="margin-bottom:10px; height: 40px;">
+                    <label> Title: </label>
+                    <div style="float: right;">{{challenge.title}}</div>
+                </div>
+
+                <div class="row" style="margin-bottom:10px; height: 40px;">
+                    <label> Challenge Type: </label>
+                    <div style="float: right;">{{getType challenge.type}}</div>
+                </div>
+
+                <div class="row" style="margin-bottom:10px; height: 40px;">
+                    <label> Starting Weight: </label>
+                    <div style="float: right;">{{challenge.weight}} pounds</div>
+                </div>
+
+                <div class="row" style="margin-bottom:10px; height: 40px;">
+                    <label> Weight Loss Goal: </label>
+                    <div style="float: right;">{{challenge.weight_loss}} pounds</div>
+                </div>
+
+                <div class="row" style="margin-bottom:10px; height: 40px;">
+                    <label> End Date: </label>
+                    <div style="float: right;">{{challenge.end_date}}</div>
+                </div>
+
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+    </div>
+</template>

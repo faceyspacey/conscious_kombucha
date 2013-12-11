@@ -12,10 +12,13 @@ Template.slide_order.events({
 		var message = prompt('Send us a quick message about the order. Anything wrong? All gravy?');
 		currentInvoice().addReplyMessage(message);
 	},
-	'touchstart .reply-button, mousedown .reply-button': function(e) {
+    'mouseup .pdf-button': function(){
+        return Invoices.findOne(Session.get('current_invoice_id')).renderInvoicePDF();
+    },
+	'touchstart .reply-button, mousedown .reply-button, touchstart .pdf-button, mousedown .pdf-button': function(e) {
 		$(e.currentTarget).addClass('touched');
 	},
-	'touchend .reply-button, mouseup .reply-button': function(e) {
+	'touchend .reply-button, mouseup .reply-button, touchend .pdf-button, mouseup .pdf-button': function(e) {
 		$(e.currentTarget).removeClass('touched');
 	}
 });

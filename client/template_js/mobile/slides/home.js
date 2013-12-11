@@ -23,6 +23,10 @@ Template.slide_home.events({
 		if(!mobileScrolling) Session.set('step_type', 'panel_one_time_order');
 		if(!mobileScrolling) nextPage();
 	},
+    'click #panel_chubby_form': function() {
+        if(!mobileScrolling) Session.set('step_type', 'panel_chubby_form');
+        if(!mobileScrolling) nextPage();
+    },
 	'click #panel_update_info_link': function() {
 		if(!mobileScrolling) Session.set('step_type', 'panel_update_info');
 		nextPage();

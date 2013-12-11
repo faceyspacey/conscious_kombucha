@@ -2,103 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab780d15-ed56-4034-a954-81edd1255e67" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/background-c.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/keg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/mobile/slides/admin/admin.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/template_js/mobile/slides/admin/admin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/mobile/slides/signup/billing_info.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/template_js/mobile/slides/signup/billing_info.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/mobile/slides/admin/brewing_todo.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/template_js/mobile/slides/admin/brewing_todo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/template_js/mobile/slides/change_password.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/mobile/slides/change_pasword.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/mobile/slides/signup/cycle_day.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/template_js/mobile/slides/signup/cycle_day.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/mobile/slides/admin/delinquent_card_accounts.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/template_js/mobile/slides/admin/delinquent_card_accounts.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/mobile/slides/admin/delivery_one_time.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/template_js/mobile/slides/admin/delivery_one_time.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/mobile/slides/admin/delivery_subscription.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/template_js/mobile/slides/admin/delivery_subscription.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/mobile/slides/admin/delivery_upgrades.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/template_js/mobile/slides/admin/delivery_upgrades.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/mobile/slides/edit_basic_info.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/template_js/mobile/slides/edit_basic_info.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/mobile/slides/signup/flavors.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/template_js/mobile/slides/signup/flavors.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/template_js/mobile/global.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/mobile/guest_home.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/template_js/mobile/guest_home.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/mobile/slides/home.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/template_js/mobile/slides/home.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/js/lib/iscroll.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/mobile/layout.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/template_js/mobile/layout.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/mobile/slides/my_kegs.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/template_js/mobile/slides/my_kegs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/mobile/slides/my_orders.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/template_js/mobile/slides/my_orders.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/mobile/slides/one_time_order.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/template_js/mobile/slides/one_time_order.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/mobile/slides/order.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/template_js/mobile/slides/order.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/mobile/slides/request_upgrades.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/template_js/mobile/slides/request_upgrades.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/js/lib/rotate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/css/mobile/scroll.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/mobile/sidebar.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/template_js/mobile/sidebar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/mobile/slide_groups.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/template_js/mobile/slide_groups.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/mobile/slides/support.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/template_js/mobile/slides/support.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/mobile/toolbar.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/template_js/mobile/toolbar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/mobile/slides/admin/unpaid_offline_invoices.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/template_js/mobile/slides/admin/unpaid_offline_invoices.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/mobile/slides/update_info.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/template_js/mobile/slides/update_info.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/mobile/slides/signup/user_info.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/template_js/mobile/slides/signup/user_info.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/mobile/slides/signup/venue_info.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/template_js/mobile/slides/signup/venue_info.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/js/models/SignUpForm.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/template_js/mobile/mobile_container.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/templates/mobile/mobile_container.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/js/lib/touch.js" afterPath="$PROJECT_DIR$/client/js/lib/_touch.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/App.js" afterPath="$PROJECT_DIR$/client/js/App.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/models/FlavorModel.js" afterPath="$PROJECT_DIR$/client/js/models/FlavorModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/models/InvoiceItemModel.js" afterPath="$PROJECT_DIR$/client/js/models/InvoiceItemModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/models/InvoiceModel.js" afterPath="$PROJECT_DIR$/client/js/models/InvoiceModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/models/KegModel.js" afterPath="$PROJECT_DIR$/client/js/models/KegModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/models/MessageModel.js" afterPath="$PROJECT_DIR$/client/js/models/MessageModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/models/Model.js" afterPath="$PROJECT_DIR$/client/js/models/Model.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/models/OrderedFlavorModel.js" afterPath="$PROJECT_DIR$/client/js/models/OrderedFlavorModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/models/UserModel.js" afterPath="$PROJECT_DIR$/client/js/models/UserModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/models/VenueModel.js" afterPath="$PROJECT_DIR$/client/js/models/VenueModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/_nav_bar.html" afterPath="$PROJECT_DIR$/client/templates/_nav_bar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/template_js/_nav_bar.js" afterPath="$PROJECT_DIR$/client/template_js/_nav_bar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/client.js" afterPath="$PROJECT_DIR$/client/js/client.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/collections.js" afterPath="$PROJECT_DIR$/client/js/collections.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/template_js/daily_flavors.js" afterPath="$PROJECT_DIR$/client/template_js/daily_flavors.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/lib/date_utilities.js" afterPath="$PROJECT_DIR$/client/js/lib/date_utilities.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/flavors.js" afterPath="$PROJECT_DIR$/server/flavors.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/lib/form_utilities.js" afterPath="$PROJECT_DIR$/client/js/lib/form_utilities.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/invoice_items.js" afterPath="$PROJECT_DIR$/server/invoice_items.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/template_js/invoices.js" afterPath="$PROJECT_DIR$/client/template_js/invoices.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/invoices.js" afterPath="$PROJECT_DIR$/server/invoices.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/kegerator_installs.html" afterPath="$PROJECT_DIR$/client/templates/kegerator_installs.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/kegs.js" afterPath="$PROJECT_DIR$/server/kegs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/layout.html" afterPath="$PROJECT_DIR$/client/templates/layout.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/main.css" afterPath="$PROJECT_DIR$/client/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/mobile/main.css" afterPath="$PROJECT_DIR$/client/css/mobile/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/main.html" afterPath="$PROJECT_DIR$/client/templates/main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/template_js/one_offs.js" afterPath="$PROJECT_DIR$/client/template_js/one_offs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/lib/resizeable.js" afterPath="$PROJECT_DIR$/client/js/lib/resizeable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/stripe.js" afterPath="$PROJECT_DIR$/server/stripe.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/users.js" afterPath="$PROJECT_DIR$/server/users.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/template_js/venues.js" afterPath="$PROJECT_DIR$/client/template_js/venues.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/venues.js" afterPath="$PROJECT_DIR$/server/venues.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/mobile/slides/challenge_accepted.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/template_js/mobile/slides/challenge_accepted.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/mobile/slides/chubby_form.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/template_js/mobile/slides/chubby_form.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/template_js/mobile/global.js" afterPath="$PROJECT_DIR$/client/template_js/mobile/global.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/mobile/slides/home.html" afterPath="$PROJECT_DIR$/client/templates/mobile/slides/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/template_js/mobile/slides/home.js" afterPath="$PROJECT_DIR$/client/template_js/mobile/slides/home.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/mobile/slides/order.html" afterPath="$PROJECT_DIR$/client/templates/mobile/slides/order.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/template_js/mobile/slides/order.js" afterPath="$PROJECT_DIR$/client/template_js/mobile/slides/order.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ckhome.iws" />
@@ -141,7 +53,7 @@
     <file path="/page_users.html" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1380489609295" ignored="false" />
     <file path="/layout.html" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1386782525794" ignored="false" />
     <file path="/header.html" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1380366538725" ignored="false" />
-    <file path="/a.dummy" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1386783714942" ignored="false" />
+    <file path="/a.dummy" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1386792242180" ignored="false" />
     <file path="/FlavorModel.js" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1381694849212" ignored="false" />
     <file path="/KegModel.js" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1381607064408" ignored="false" />
     <file path="/users.js" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1381875108662" ignored="false" />
@@ -264,6 +176,15 @@
     <file path="/client_emails.html" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1382818704145" ignored="false" />
     <file path="$PROJECT_DIR$/../ckcode/client/templates/layout.html" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1386782531831" ignored="false" />
     <file path="$PROJECT_DIR$/../ckcode/client/js/models/InvoiceItemModel.js" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1386786062643" ignored="false" />
+    <file path="/chubby_form.html" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1386794545791" ignored="false" />
+    <file path="/chubby_form.js" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1386794470278" ignored="false" />
+    <file path="$PROJECT_DIR$/../ckcode/client/templates/mobile/slides/order.html" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1386789764866" ignored="false" />
+    <file path="/order.html" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1386790024501" ignored="false" />
+    <file path="/home.js" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1386790726219" ignored="false" />
+    <file path="/home.html" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1386790833648" ignored="false" />
+    <file path="/global.js" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1386791094602" ignored="false" />
+    <file path="/challenge_accepted.html" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1386794277691" ignored="false" />
+    <file path="/challenge_accepted.js" changelist="ab780d15-ed56-4034-a954-81edd1255e67" time="1386794390879" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -288,91 +209,116 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="InvoiceModel.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/models/InvoiceModel.js">
+      <file leaf-file-name="chubby_form.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/templates/mobile/slides/chubby_form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="145" column="19" selection-start="5165" selection-end="5165" vertical-scroll-proportion="0.0">
+            <state line="10" column="35" selection-start="621" selection-end="621" vertical-scroll-proportion="-5.0">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#div#1;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#div#2;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#3;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#div#3;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#1;n#div#3;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#2;n#div#3;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#4;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="request_upgrades.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/templates/mobile/slides/request_upgrades.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_nav_bar.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/templates/_nav_bar.html">
+      <file leaf-file-name="edit_basic_info.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/templates/mobile/slides/edit_basic_info.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="16" selection-start="1192" selection-end="1192" vertical-scroll-proportion="-10.625">
+            <state line="1" column="57" selection-start="94" selection-end="122" vertical-scroll-proportion="-0.625">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="flavors.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/flavors.js">
+      <file leaf-file-name="change_pasword.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/templates/mobile/slides/change_pasword.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="14" selection-start="1630" selection-end="1630" vertical-scroll-proportion="0.7818182">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="users.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/users.js">
+      <file leaf-file-name="billing_info.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/templates/mobile/slides/signup/billing_info.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="5" selection-start="1421" selection-end="1421" vertical-scroll-proportion="0.0">
+            <state line="9" column="103" selection-start="547" selection-end="642" vertical-scroll-proportion="-5.625">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FlavorModel.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/models/FlavorModel.js">
+      <file leaf-file-name="chubby_form.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/template_js/mobile/slides/chubby_form.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="0" selection-start="769" selection-end="769" vertical-scroll-proportion="0.0">
+            <state line="26" column="10" selection-start="891" selection-end="891" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rotate.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/lib/rotate.js">
+      <file leaf-file-name="challenge_accepted.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/templates/mobile/slides/challenge_accepted.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="327" column="39" selection-start="13182" selection-end="13182" vertical-scroll-proportion="0.0">
+            <state line="22" column="54" selection-start="1008" selection-end="1008" vertical-scroll-proportion="0.41237113">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#4;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#5;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="challenge_accepted.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/template_js/mobile/slides/challenge_accepted.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="5" selection-start="132" selection-end="360" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VenueModel.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/js/models/VenueModel.js">
+      <file leaf-file-name="billing_info.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/template_js/mobile/slides/signup/billing_info.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="295" column="6" selection-start="11438" selection-end="11438" vertical-scroll-proportion="0.0">
+            <state line="16" column="14" selection-start="486" selection-end="486" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="daily_flavors.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/template_js/daily_flavors.js">
+      <file leaf-file-name="user_info.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/template_js/mobile/slides/signup/user_info.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="3" selection-start="1014" selection-end="1014" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="invoices.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/template_js/invoices.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="5" selection-start="897" selection-end="897" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="one_offs.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/template_js/one_offs.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="42" selection-start="828" selection-end="828" vertical-scroll-proportion="0.0">
+            <state line="22" column="14" selection-start="671" selection-end="671" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -396,15 +342,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/server/venues.js" />
-        <option value="$PROJECT_DIR$/client/js/client.js" />
-        <option value="$PROJECT_DIR$/client/js/lib/date_utilities.js" />
-        <option value="$PROJECT_DIR$/client/js/models/Model.js" />
-        <option value="$PROJECT_DIR$/client/template_js/_nav_bar.js" />
-        <option value="$PROJECT_DIR$/client/template_js/venues.js" />
-        <option value="$PROJECT_DIR$/server/users.js" />
-        <option value="$PROJECT_DIR$/client/js/lib/rotate.js" />
-        <option value="$PROJECT_DIR$/client/js/models/FlavorModel.js" />
         <option value="$PROJECT_DIR$/client/js/models/InvoiceModel.js" />
         <option value="$PROJECT_DIR$/client/js/models/VenueModel.js" />
         <option value="$PROJECT_DIR$/client/template_js/daily_flavors.js" />
@@ -412,12 +349,21 @@
         <option value="$PROJECT_DIR$/client/template_js/one_offs.js" />
         <option value="$PROJECT_DIR$/client/templates/_nav_bar.html" />
         <option value="$PROJECT_DIR$/server/flavors.js" />
+        <option value="$PROJECT_DIR$/client/template_js/mobile/slides/order.js" />
+        <option value="$PROJECT_DIR$/client/templates/mobile/slides/order.html" />
+        <option value="$PROJECT_DIR$/client/templates/mobile/slides/home.html" />
+        <option value="$PROJECT_DIR$/client/template_js/mobile/slides/home.js" />
+        <option value="$PROJECT_DIR$/client/template_js/mobile/global.js" />
+        <option value="$PROJECT_DIR$/client/template_js/mobile/slides/challenge_accepted.js" />
+        <option value="$PROJECT_DIR$/client/templates/mobile/slides/chubby_form.html" />
+        <option value="$PROJECT_DIR$/client/template_js/mobile/slides/chubby_form.js" />
+        <option value="$PROJECT_DIR$/client/templates/mobile/slides/challenge_accepted.html" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="49" />
+    <option name="x" value="-1317" />
     <option name="y" value="24" />
     <option name="width" value="1317" />
     <option name="height" value="744" />
@@ -553,7 +499,41 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="emails" />
+              <option name="myItemId" value="mobile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slides" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ckhome" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ckhome" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slides" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="signup" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -572,6 +552,84 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="template_js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ckhome" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ckhome" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="template_js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ckhome" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ckhome" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="template_js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slides" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ckhome" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ckhome" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="template_js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slides" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="signup" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -739,15 +797,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="49" y="24" width="1317" height="744" extended-state="6" />
+    <frame x="-1317" y="24" width="1317" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0448" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1104" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296617" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28402832" sideWeight="0.9552" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28402832" sideWeight="0.8896" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2769473" sideWeight="0.4112" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -825,118 +883,142 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/js/lib/_touch.js">
+    <entry file="file://$PROJECT_DIR$/client/template_js/mobile/toolbar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="51" column="5" selection-start="1785" selection-end="1785" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/lib/date_utilities.js">
+    <entry file="file://$PROJECT_DIR$/client/templates/mobile/slides/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="0" selection-start="2387" selection-end="2387" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/models/Model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="42" selection-start="1838" selection-end="1838" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/models/OrderedFlavorModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/template_js/_nav_bar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="5" selection-start="1511" selection-end="1511" vertical-scroll-proportion="0.0">
+        <state line="13" column="59" selection-start="858" selection-end="878" vertical-scroll-proportion="-8.125">
           <folding>
-            <marker date="1386785159665" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1386785159665" expanded="false" signature="-1:-1" placeholder="..." />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#template#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/template_js/venues.js">
+    <entry file="file://$PROJECT_DIR$/client/template_js/mobile/slides/order.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="57" selection-start="344" selection-end="344" vertical-scroll-proportion="0.0">
+        <state line="23" column="3" selection-start="896" selection-end="896" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/lib/rotate.js">
+    <entry file="file://$PROJECT_DIR$/client/template_js/mobile/global.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="327" column="39" selection-start="13182" selection-end="13182" vertical-scroll-proportion="0.0">
+        <state line="112" column="16" selection-start="4240" selection-end="4240" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/users.js">
+    <entry file="file://$PROJECT_DIR$/client/template_js/mobile/slides/home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="5" selection-start="1421" selection-end="1421" vertical-scroll-proportion="0.0">
+        <state line="27" column="40" selection-start="1131" selection-end="1131" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/models/FlavorModel.js">
+    <entry file="file://$PROJECT_DIR$/client/templates/mobile/slides/update_info.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="769" selection-end="769" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/models/InvoiceModel.js">
+    <entry file="file://$PROJECT_DIR$/client/templates/mobile/slides/request_upgrades.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="145" column="19" selection-start="5165" selection-end="5165" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/models/VenueModel.js">
+    <entry file="file://$PROJECT_DIR$/client/templates/mobile/slides/edit_basic_info.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="295" column="6" selection-start="11438" selection-end="11438" vertical-scroll-proportion="0.0">
+        <state line="1" column="57" selection-start="94" selection-end="122" vertical-scroll-proportion="-0.625">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/template_js/daily_flavors.js">
+    <entry file="file://$PROJECT_DIR$/client/templates/mobile/slides/change_pasword.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="3" selection-start="1014" selection-end="1014" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/template_js/invoices.js">
+    <entry file="file://$PROJECT_DIR$/client/templates/mobile/slides/signup/billing_info.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="5" selection-start="897" selection-end="897" vertical-scroll-proportion="0.0">
+        <state line="9" column="103" selection-start="547" selection-end="642" vertical-scroll-proportion="-5.625">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/template_js/one_offs.js">
+    <entry file="file://$PROJECT_DIR$/client/template_js/mobile/slides/signup/user_info.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="42" selection-start="828" selection-end="828" vertical-scroll-proportion="0.0">
+        <state line="22" column="14" selection-start="671" selection-end="671" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/templates/_nav_bar.html">
+    <entry file="file://$PROJECT_DIR$/client/template_js/mobile/slides/signup/billing_info.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="16" selection-start="1192" selection-end="1192" vertical-scroll-proportion="-10.625">
+        <state line="16" column="14" selection-start="486" selection-end="486" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/flavors.js">
+    <entry file="file://$PROJECT_DIR$/client/template_js/mobile/slides/challenge_accepted.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="14" selection-start="1630" selection-end="1630" vertical-scroll-proportion="0.7818182">
+        <state line="13" column="5" selection-start="132" selection-end="360" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/templates/mobile/slides/chubby_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="35" selection-start="621" selection-end="621" vertical-scroll-proportion="-5.0">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#1;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#2;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#3;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#3;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#1;n#div#3;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#2;n#div#3;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/template_js/mobile/slides/chubby_form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="10" selection-start="891" selection-end="891" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/templates/mobile/slides/challenge_accepted.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="54" selection-start="1008" selection-end="1008" vertical-scroll-proportion="0.41237113">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#5;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

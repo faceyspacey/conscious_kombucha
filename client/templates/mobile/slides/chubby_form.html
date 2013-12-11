@@ -1,0 +1,63 @@
+<template name="slide_chubby_form">
+    <div id="slide_chubby_form" class="mobile_pages">
+        <div class="scrollInner">
+
+            <div style="width:82%; margin: 0 auto;">
+                <input id="chubby_form_title" placeholder="Title" {{disabled}} />
+
+                <div class="row" style="margin-bottom:10px;">
+                    <label for="chubby_form_challenge_type"> Challenge Type: </label>
+                    <select class="styled-select" id="chubby_form_challenge_type" style="float:none; width:80%; margin: 5px auto 15px auto;" name="challengeType" {{disabled}} >
+                    {{#each types}}
+                        <option value="{{id}}">{{title}}</option>
+                    {{/each}}
+                    </select>
+                </div>
+
+                <div class="row" style="margin-bottom:10px;">
+                    <label for="chubby_form_weight"> Starting Weight: </label>
+                    <select class="styled-select" id="chubby_form_weight" style="float:none; width:80%; margin: 5px auto 15px auto;" name="weight" {{disabled}} >
+                        {{#each weightOptions}}
+                            <option value="{{this}}">{{this}} pounds</option>
+                        {{/each}}
+                    </select>
+                </div>
+
+                <div class="row" style="margin-bottom:10px;">
+                    <label for="chubby_form_weight_loss"> Weight Loss Goal: </label>
+                    <select class="styled-select" id="chubby_form_weight_loss" style="float:none; width:80%; margin: 5px auto 15px auto;" name="weight" {{disabled}} >
+                    {{#each weightLossOptions}}
+                        <option value="{{this}}">{{this}} pounds</option>
+                    {{/each}}
+                    </select>
+                </div>
+
+                <div class="row" style="margin-bottom:10px;">
+                    <label style="display:block; text-align: inherit;"> End Date: </label>
+
+                    <select class="styled-select" id="chubby_form_day" style="float:none; display: inline-block; width: inherit;" name="day" {{disabled}} >
+                    {{#each dayOptions}}
+                        <option value="{{this}}">{{this}}</option>
+                    {{/each}}
+                    </select> /
+
+                    <select class="styled-select" id="chubby_form_month" style="float:none; display: inline-block; width: inherit;" name="month" {{disabled}} >
+                    {{#each monthOptions}}
+                        <option value="{{this}}">{{this}}</option>
+                    {{/each}}
+                    </select> /
+
+                    <select class="styled-select" id="chubby_form_year" style="float:none; display: inline-block; width: inherit;" name="year" {{disabled}} >
+                    {{#each yearOptions}}
+                        <option value="{{this}}">{{this}}</option>
+                    {{/each}}
+                    </select>
+                </div>
+
+                <div style="clear:both;"></div>
+            </div>
+
+            <a class="toolbar-button save-button accept-challenge" href="#" style="margin-top: 30px;">Challenge Accepted!</a>
+        </div>
+    </div>
+</template>
