@@ -17,17 +17,9 @@ Template.page_daily_flavors.helpers({
 /** daily_kegs_table HELPERS, EVENTS & CALLBACKS **/
 
 Template.daily_kegs_table.helpers({
-	flavors: function(dayCycleAttributes) {		
-		var kegs =  Kegs.find(dayCycleAttributes).fetch(),
-			flavors = _.countBy(kegs, function(keg) {
-				return keg.randomCompensatedFlavor()._id;
-			}); //returns {Orange: 4, Cherry 7}, but ids instead of names: {dfgljkdfg: 4, sljksdfljs: 7}
-	
-		return _.map(flavors, function(value, key) {
-			var flavor = Flavors.findOne(key);
-			return {name: flavor.name, icon: flavor.icon, quantity: value}; 
-		}); //returns [{name: 'orange', etc: }, {name: 'strawberry, etc: }]
-	}
+    flavors: function(dayCycleAttributes) {
+        return getBrewingFlavors(dayCycleAttributes);
+    }
 });
 
 

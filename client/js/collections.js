@@ -33,6 +33,15 @@ Messages = new Meteor.Collection("messages", {
 });
 
 
+usersSub = Meteor.subscribe('users');
+venuesSub = Meteor.subscribe('venues');
+Meteor.subscribe('invoices');
+Meteor.subscribe('invoice_items');
+Meteor.subscribe('messages');
+Meteor.subscribe('kegs');
+Meteor.subscribe('flavors');
+
+/*
 Deps.autorun(function() {
 	//console.log('user signed up!');
 	
@@ -44,4 +53,4 @@ Deps.autorun(function() {
 	Meteor.subscribe('invoices');
 	Meteor.subscribe('invoice_items');
 	Meteor.subscribe('messages');
-})
+})*/

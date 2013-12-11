@@ -57,6 +57,7 @@ Model = {
         return (this[field] && this[field].getTime() > 0) ? this.time(field) : 'Not yet';
     },
 	extend: function(doc) {
-		_.extend(this, this.defaultValues, doc);
+        //_.extend(this, this.defaultValues); //for some reason the doc isnt overwriting default values. we dont need this anyway. insert handles it
+        _.extend(this, doc);
 	}
 };

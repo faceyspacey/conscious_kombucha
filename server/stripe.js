@@ -30,9 +30,9 @@ Meteor.methods({
 			});
 		}
 	},
-    chargeCustomer: function(user, invoiceId) {
+    chargeCustomer: function(invoiceId) {
         var invoice = Invoices.findOne(invoiceId),
-			userId = Meteor.userId();
+			userId = invoice.user_id; //Meteor.userId();
 
         Stripe.charges.create({
             amount: invoice.total*100,
@@ -47,9 +47,5 @@ Meteor.methods({
 				else Invoices.update(invoice._id, {$set: {payment_failed: false, paid: true}});
             }).run();
         });
-
-        //var c = Fiber.yield();
-
-        return true;
     }
 });

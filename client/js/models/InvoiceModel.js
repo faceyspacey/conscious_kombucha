@@ -13,9 +13,11 @@
  *  total                       Int
  *  paid                        Bool
  *
+ *  offline_customer			Bool
  */
 
 InvoiceModel = function(doc){
+    _.extend(this, Model);
 	this.collectionName ='Invoices';
     this.defaultValues = {
 		order_num: 0,
@@ -23,6 +25,10 @@ InvoiceModel = function(doc){
         total: 0,
         payment_failed: false,
 		paid: false
+    };
+
+    this.afterInsert = function() {
+        if(!this.user().stripe_customer_token) this.save({offline_customer: true});
     };
 
     this.user = function(){
@@ -57,7 +63,7 @@ InvoiceModel = function(doc){
         var self = this;
 
         this.save({paymentInProgress: true});
-        this.venue().chargeCustomer(this._id, function(){
+        this.chargeCustomer(function(){
             self.sendChargeMessage();
         });
     };
@@ -94,11 +100,18 @@ InvoiceModel = function(doc){
     this.requestedDeliveryDate = function() {
         return moment(this.requested_delivery_date).format("ddd, MMM Do, h:mm a");
     };
-	
-	this.actualDeliveryDate = function(){
-        //console.log('actual_delivery_date: '+this.actual_delivery_date);
-		return this.actual_delivery_date ? moment(this.actual_delivery_date).format("ddd, MMM Do, h:mm a") : 'Not Delivered Yet';
-	};
+
+    this.actualDeliveryDate = function() {
+        return this.actual_delivery_date ? moment(this.actual_delivery_date).format("DD/MM h:mma") : 'Not Delivered Yet';
+    };
+
+    this.actualDeliveryMoment = function() {
+        return this.actual_delivery_date ? moment(this.actual_delivery_date) : null;
+    };
+
+    this.actualDeliverySmallTime = function() {
+        return this.actualDeliveryMoment().format("MM/DD") +'<br />' + this.actualDeliveryMoment().format("h:mma");
+    };
 	
 	this.actualPaidDate = function() {
 		return moment(this.actual_paid_date).format("ddd, MMM Do, h:mm a");
@@ -109,6 +122,7 @@ InvoiceModel = function(doc){
 		if(this.paid) return 'PAID';
 		if(this.payment_failed) return 'FAILED';
 		if(!this.is_stripe_customer && !this.paid) return 'AWAITING CHECK';
+        return 'AWAITING PAYMENT';
 	};
 
     this.formattedCreatedAt = function(){
@@ -117,6 +131,25 @@ InvoiceModel = function(doc){
 
     this.paymentPeriod = function(){
         // payment period rendering comes here
+    };
+
+    this.chargeCustomer = function(callback) {
+        var self = this;
+        if(this.user().stripe_customer_token != undefined) {
+            Meteor.call('chargeCustomer', this.user(), this._id, function(error, result){
+                console.log(result);
+                Invoices.update(self._id, {$set: {paymentInProgress: false}}, function(){
+                    setTimeout(function(){
+                        if( typeof callback == 'function')
+                            callback.call();
+                    }, 2000);
+                });
+
+            });
+        }
+        else {
+            // charge non-stripe cutomers
+        }
     };
 
     this.renderInvoicePDF = function(){
@@ -288,7 +321,6 @@ InvoiceModel = function(doc){
 
     };
 
-	_.extend(this, Model);
 	this.extend(doc);
 
     return this;

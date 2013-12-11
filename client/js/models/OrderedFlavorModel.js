@@ -14,6 +14,7 @@
  */
 
 OrderedFlavorModel = function(doc){
+    _.extend(this, Model);
 	this.collectionName ='OrderedFlavors';
 	
 	var defaultFlavor = Flavors.findOne({one_off_quantity_available: {$gt: 0}}, {sort: {one_off_quantity_available: -1}});
@@ -21,11 +22,11 @@ OrderedFlavorModel = function(doc){
     this.defaultValues = {
         user_id: Meteor.userId(),
         quantity: 1,
-		rate: App.prices.fiveGallonsOneOff,
-		keg_type: '5 Gallons',
-		flavor_id: defaultFlavor._id,
-		flavor_icon: defaultFlavor.icon,
-		flavor_name: defaultFlavor.name
+        rate: App.prices.fiveGallonsOneOff,
+        keg_type: 'Five Gallons',
+        flavor_id: defaultFlavor._id,
+        flavor_icon: defaultFlavor.icon,
+        flavor_name: defaultFlavor.name
     };
 
     this.user = function(){
@@ -37,10 +38,9 @@ OrderedFlavorModel = function(doc){
 	};
 	
 	this.name = function() {
-		return this.keg_type + ' ' + this.flavor_name + 'keg(s)'
+        return this.flavor_name + ' keg' + (this.quantity > 1 ? 's' : '');
 	};
 
-	_.extend(this, Model);
 	this.extend(doc);
 
     return this;

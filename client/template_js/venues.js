@@ -2,15 +2,15 @@
 
 Template.page_venues.helpers({
 	venues: function(){
-		var userId = this.user_id, //this is how i solved other collections not showing after signup
-			condition = userId ? {user_id: userId} : {};
-			
+        var userId = Session.get('new_user_id') || this.user_id, //this is how i solved other collections not showing after signup
+            condition = userId ? {user_id: userId} : {};
+
 	    return Venues.find(condition, {sort: {name: 1}});
 	},
 	model: function() {
 		if(Session.get('venue_id') == 'new_venue') return new VenueModel;
 		if(Session.get('venue_id')) return  Venues.findOne(Session.get('venue_id'));
-		return false; 
+		return false;
 	}
 });
 
@@ -42,7 +42,12 @@ Template.venue_grid_row.events({
 		if(confirm("Are you sure you'd like to replace your current tap tower with a {FREE!) double tower?")) {
             this.requestDoubleTap();
 		}
-	}
+	},
+    'click .request-materials-btn': function(e) {
+        if(confirm("Are you sure you would like to request additional promotional materials?")) {
+            this.requestMaterials();
+        }
+    }
 });
 
 

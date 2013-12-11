@@ -5,25 +5,27 @@ Meteor.publish("users", function () {
 
 Meteor.users.allow({
     insert: function(userId, doc) {
-            return true;
+        return true;
     },
     update: function(userId, doc, fields, modifier) {
-        return ((doc._id == userId) || Roles.userIsInRole(this.userId, ['admin']));
+        return (doc._id == userId || Roles.userIsInRole(userId, ['admin']));
     },
     remove: function() {
-        return ((doc._id == userId) || Roles.userIsInRole(this.userId, ['admin']));
-    }
+        return (doc._id == userId || Roles.userIsInRole(userId, ['admin']));
+    },
+    fetch: ['_id']
 });
 
 
 Accounts.onCreateUser(function(options, user){
     var emailsWithRoles = [
-        {email: "90.matheus@gmail.com", roles: ['admin']},
-        {email: "james@faceyspacey.com", roles: ['admin']},
+        {email: "90.matheus@gmail.com", roles: ['admin', 'superAdmin']},
+        {email: "james@faceyspacey.com", roles: ['admin', 'superAdmin']},
         {email: "tyler@consciouskombucha.com", roles: ['admin']},
-		{email: "tylerbeerman@gmail.com", roles: ['admin']},
-		{email: "sales@consciouskombucha.com", roles: ['admin']},
-		{email: "james@consciouskombucha.com", roles: ['admin']}
+        {email: "tylerbeerman@gmail.com", roles: ['admin']},
+        {email: "sales@consciouskombucha.com", roles: ['admin']},
+        {email: "josh@linkit.com", roles: ['admin', 'superAdmin']},
+        {email: "james@consciouskombucha.com", roles: ['admin']}
     ];
 
     var foundRoles = false;

@@ -19,6 +19,7 @@
 
 
 InvoiceItemModel = function(doc) {
+    _.extend(this, Model);
 	this.collectionName ='InvoiceItems';
     this.defaultValues = {};
 
@@ -47,8 +48,7 @@ InvoiceItemModel = function(doc) {
     this.getSubtotal = function() {
         return this.quantity * this.rate;
     };
-	
-	_.extend(this, Model);
+
 	this.extend(doc);
 
     return this;

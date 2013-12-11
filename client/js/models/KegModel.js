@@ -16,6 +16,7 @@
  */
 
 KegModel = function(doc){
+    _.extend(this, Model);
 	this.collectionName ='Kegs';
     this.defaultValues = {
         payment_cycle: 'weekly',
@@ -70,7 +71,6 @@ KegModel = function(doc){
         return _.findWhere(App.paymentDays, {id: this.payment_day});
     };
 
-	_.extend(this, Model);
 	this.extend(doc);
 
     return this;

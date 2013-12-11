@@ -13,21 +13,30 @@
  *  kegerator_count             Int
  *  tap_count                   Int
  *  delivery_date               Date
+ *
  *  kegerator_request_date      Date
  *  tap_request_date            Date
+ *  materials_request_date		Date
  *
+ *	kegerator_install_date		Date
+ *  tap_install_date			Date
+ *  materials_supplied_date		Date
 */
 
 VenueModel = function(doc){
+    _.extend(this, Model);
 	this.collectionName ='Venues';
 	this.defaultValues = {
 		kegerator_count: 0,
 		tap_count: 0,
+
         kegerator_install_date: new Date(0),
         tap_install_date: new Date(0),
 		kegerator_request_date: new Date,
 		tap_request_date: new Date(0),
         delivery_date : new Date(0),
+
+        materials_request_date: new Date,
 	};
 
     this.afterRemove = function() {
@@ -37,13 +46,33 @@ VenueModel = function(doc){
     this.afterInsert = function(){
     };
 
-	this.kegeratorInstalled = function() {
-		return this.kegerator_install_date >= this.kegerator_request_date;
-	};
-	
-	this.tapInstalled = function() {
-		return this.tap_install_date >= this.tap_request_date;
-	};
+    this.kegeratorInstalled = function() {
+        return this.kegerator_install_date > (this.kegerator_request_date || 0);
+    };
+
+    this.tapInstalled = function() {
+        return this.tap_install_date > (this.tap_request_date || 0);
+    };
+
+    this.materialsSupplied = function() {
+        return this.materials_supplied_date > (this.materials_request_date || 0);
+    };
+
+    this.needsStuff = function() {
+        return !this.kegeratorInstalled() || !this.tapInstalled() || !this.materialsSupplied();
+    };
+
+    this.lastUpgradeTime = function() {
+        var lastUpgradeTime = _.sortBy([
+            this.kegerator_install_date,
+            this.tap_request_date,
+            this.materials_supplied_date
+        ], function(date) {
+            return date ? date.getTime() : null;
+        })[2];
+
+        return moment(lastUpgradeTime).format("MM/DD") +'<br />' + moment(lastUpgradeTime).format("h:mma");
+    };
 		
     this.user = function(){
         return Meteor.users.findOne(this.user_id);
@@ -79,6 +108,9 @@ VenueModel = function(doc){
     this.requestDoubleTap = function(){
         Venues.update(this._id, {$set: {tap_request_date: new Date}});
         this.sendRequestMessage('Double Tap Tower');
+    };
+    this.requestMaterials = function(){
+        Venues.update(this._id, {$set: {materials_request_date: new Date}});
     };
 
     this.sendRequestMessage = function(requested){
@@ -117,10 +149,14 @@ VenueModel = function(doc){
         Meteor.call('sendCustomerEmail', invoice.user().getEmail(), 'Order delivered: #'+invoice.order_num, customerMessage, function(err, res){});
     }
 
-    this.lastDeliveryDate = function(payment_day){
-        var invoice = Invoices.findOne({venue_id: this._id, payment_day: payment_day}, {sort: {created_at: -1}});
-        return invoice ? invoice.actualDeliveryDate() : 'Not Delivered Yet';
-    }
+    //for subscriptions only
+    this.lastDeliveryDate = function(payment_day, smallTime){
+        var invoice = this.lastSubscriptionInvoiceForDay(payment_day);
+        return invoice ? (smallTime ? invoice.actualDeliverySmallTime() : invoice.actualDeliveryDate()) : 'Not Delivered Yet';
+    };
+    this.lastSubscriptionInvoiceForDay = function(payment_day) {
+        return Invoices.findOne({venue_id: this._id, payment_day: payment_day, type: 'subscription'}, {sort: {created_at: -1}});
+    };
 
     this.hasUnpaidInvoice = function(){
         return Invoices.find({
@@ -150,7 +186,7 @@ VenueModel = function(doc){
             flavors.push({
                 period: keg.payment_cycle + '-' + keg.payment_day,
                 period_name: keg.payment_cycle + ' on ' + keg.payment_day,
-                name: keg.getType().name + ' keg(s) ' + keg.payment_cycle.ucfirst()+ '',
+                name: keg.randomCompensatedFlavor().name + ' keg' + (kegGroup.length > 1 ? 's' : ''),
                 quantity: kegGroup.length,
                 subtotal: kegs_subtotal,
                 rate: keg.price,
@@ -167,8 +203,8 @@ VenueModel = function(doc){
         var invoiceId = this.createInvoice({
             	type: 'subscription',
 	            payment_day: subscriptionAttributes.payment_day,
-	            requested_delivery_date: nextDateObj(new Date(), subscriptionAttributes.payment_day, 'noon'),
-	            actual_delivery_date: new Date,
+                requested_delivery_date: markedDeliveryDate(subscriptionAttributes.payment_day),//nextDateObj(new Date(), subscriptionAttributes.payment_day, 'noon'),
+                actual_delivery_date: new Date,
 	            delivered: true
 	        }),
 			flavorRows = this.kegsForSubscription(subscriptionAttributes.payment_day);
@@ -181,39 +217,37 @@ VenueModel = function(doc){
 
 	this.placeOrder = function(orderedKegs, deliveryDate) {	
 		var alertMessage, self = this;
-			
-		if(alertMessage = this.orderedMoreThanAvailable(orderedKegs)) {
+
+        /** we are not using one-off quantity limits any more. but will save the code
+         if(alertMessage = this.orderedMoreThanAvailable(orderedKegs)) {
 			alert(alertMessage)
 			return false;
 		}
+         **/
 
 		var invoiceId = this.createInvoice({type: 'one_off', delivered: false, requested_delivery_date: deliveryDate});
 		this.createInvoiceItems(orderedKegs, invoiceId, true);
-		this.chargeCustomer(invoiceId, function(){ self.sendDeliveryMessages(invoiceId); });
 			
 		return invoiceId;
 	};
 	
 	this.orderedMoreThanAvailable = function(orderedKegs) {
-		var stopOrder = false,
-			message = '',
-			availableFlavors = {};
-			
-		orderedKegs.forEach(function(keg) {
-			var kegFlavor = Flavors.findOne(keg.flavor_id),
-				kegFlavorQuantity = kegFlavor.one_off_quantity_available;
-		
-			if(_.isUndefined(availableFlavors[keg.flavor_id])) availableFlavors[keg.flavor_id] = 0;
-			availableFlavors[keg.flavor_id] += keg.quantity; //sum quantity used across the same flavor in multiple flavor rows
-			
-			//if ordered more kegs than we have available for the current flavor
-			if(availableFlavors[keg.flavor_id] > kegFlavorQuantity) {
-				stopOrder = true;
-				message = 'Sorry, you ordered more '+ kegFlavor.name + ' kegs than we have available. Please modify your order.';
-			}
-		});
-		
-		return stopOrder ? message : false;
+        var stopOrder = false,
+            message = '',
+            availableFlavors = {};
+
+        orderedKegs.forEach(function(keg) {
+            //sum quantity used across the same flavor in multiple flavor rows
+            availableFlavors[keg.flavor_id] ? availableFlavors[keg.flavor_id] = 0 : availableFlavors[keg.flavor_id] += keg.quantity;
+
+            //if ordered more kegs than we have available for the current flavor
+            if(availableFlavors[keg.flavor_id] > Flavors.findOne(keg.flavor_id).kegFlavor.one_off_quantity_available) {
+                stopOrder = true;
+                message = 'Sorry, you ordered more '+ kegFlavor.name + ' kegs than we have available. Please modify your order.';
+            }
+        });
+
+        return stopOrder ? message : false;
 	};
 	
 	this.createInvoice = function(attributes) {
@@ -258,25 +292,10 @@ VenueModel = function(doc){
 	};
 	
 	this.chargeCustomer = function(invoiceId, callback) {
-        var self = this;
-		if(this.user().stripe_customer_token != undefined) {
-            Meteor.call('chargeCustomer', this.user(), invoiceId, function(error, result){
-                console.log(result);
-                Invoices.update(invoiceId, {$set: {paymentInProgress: false}}, function(){
-                    setTimeout(function(){
-                        if( typeof callback == 'function')
-                            callback.call();
-                    }, 2000);
-                });
-
-            });
-		}
-		else {
-			// charge non-stripe cutomers
-		}
+        Invoices.findOne(invoiceId).chargeCustomer(callback);
 	};
 
-    _.extend(this, Model);
+
 	this.extend(doc);
 
 	return this;

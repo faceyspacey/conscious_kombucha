@@ -1,0 +1,22 @@
+<template name="mobile_layout">
+	<div id="navi-top" style="">
+        {{loginButtons align="right"}} 
+  
+		{{#if isSuperAdminAndOnDesktop}}
+			<div class="navi-links-holder">
+	            {{> _nav_bar}}            
+	        </div>
+		{{/if}}
+    </div>
+
+	<div class="mobile_logo">
+		<img id="m_logo" src="/images/sales_logo.png" style="width: 505px;">
+		<img id="m_tagline" src="/images/sales_enlightened.png" style="width:289px;" alt="Enlightened Tea">
+	</div>
+	
+	<div id="fake_body"></div>
+	
+	{{yield}}
+</template>
+
+
