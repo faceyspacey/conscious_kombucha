@@ -18,22 +18,22 @@ OrderedFlavorModel = function(doc){
 	this.collectionName ='OrderedFlavors';
 	
 	var defaultFlavor = Flavors.findOne({one_off_quantity_available: {$gt: 0}}, {sort: {one_off_quantity_available: -1}});
-		
-    this.defaultValues = {
-        user_id: Meteor.userId(),
-        quantity: 1,
-        rate: App.prices.fiveGallonsOneOff,
-        keg_type: 'Five Gallons',
-        flavor_id: defaultFlavor._id,
-        flavor_icon: defaultFlavor.icon,
-        flavor_name: defaultFlavor.name
-    };
+
+    // Default values - This kind of model will never be saved so we can se the default only this way
+    this.user_id = Meteor.userId();
+    this.quantity = 1;
+    this.rate = App.prices.fiveGallonsOneOff;
+    this.keg_type = 'Five Gallons';
+    this.flavor_id = defaultFlavor._id;
+    this.flavor_icon = defaultFlavor.icon;
+    this.flavor_name = defaultFlavor.name;
 
     this.user = function(){
         return Meteor.users.findOne(this.user_id);
     };
 
 	this.subtotal = function() {
+        console.log(this.quantity, this.rate);
 		return this.quantity * this.rate;
 	};
 	

@@ -260,6 +260,7 @@ VenueModel = function(doc){
             quantity = 0;
 		
 		kegs.forEach(function(item) {
+            console.log('item ', item);
             InvoiceItems.insert({
                 invoice_id: invoiceId,
                 user_id: this.user_id,

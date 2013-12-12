@@ -1,10 +1,10 @@
 {
   "packages": {
     "router": {},
-    "iron-router": {},
     "roles": {},
     "stripe": {},
     "moment": {},
-    "flash-messages": {}
+    "flash-messages": {},
+    "iron-router": {}
   }
 }

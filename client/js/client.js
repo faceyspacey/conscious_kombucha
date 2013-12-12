@@ -255,7 +255,8 @@ Router.configure({
         initializeScrolls();
 
         var pages = Router.options.pages;
-        var routeName = this.context.route.name;
+        var routeName = this.route.name;
+        //console.log(routeName);
 
         if(isMobile) {
             if(!Meteor.user() && routeName != 'signup' && routeName != 'guest') {

@@ -10,7 +10,8 @@ standard-app-packages
 accounts-ui
 accounts-password
 roles
-iron-router
 stripe
 moment
 flash-messages
+npm
+iron-router

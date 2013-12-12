@@ -45,6 +45,7 @@ Template.slide_one_time_order.events({
 				flavor_icon: currentFlavor().icon,
 				quantity: parseInt($('#quantity_dropdown').val())
 			}),
+            //keg = keg.prepareDefaults({}),
 			venue = Venues.findOne($('select#venue_dropdown').val()),
 			deliveryDate = moment({
 					day: $("#day_dropdown").val(), 

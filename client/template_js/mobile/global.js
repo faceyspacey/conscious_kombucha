@@ -123,7 +123,7 @@ getSlideGroupTemplates = function(stepType) {
 };
 
 currentTemplate = function() {
-	console.log(Session.get('step_type'), Session.get('slide_step'))
+	console.log(Session.get('step_type'), Session.get('slide_step'));
 	return stepTypes[Session.get('step_type')][Session.get('slide_step')].template;
 };
 

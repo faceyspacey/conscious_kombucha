@@ -1,17 +1,13 @@
 {
-  "meteor": {
-    "git": "https://github.com/meteor/meteor.git",
-    "branch": "master",
-    "commit": "be1a55adb49276046254f7a15d1f433a8dcb84a1"
-  },
+  "meteor": {},
   "dependencies": {
     "basePackages": {
       "router": {},
-      "iron-router": {},
       "roles": {},
       "stripe": {},
       "moment": {},
-      "flash-messages": {}
+      "flash-messages": {},
+      "iron-router": {}
     },
     "packages": {
       "router": {
@@ -19,20 +15,15 @@
         "tag": "v0.5.4.1",
         "commit": "d00e380dda2184b70e909fc4a0fb5358d602c586"
       },
-      "iron-router": {
-        "git": "https://github.com/EventedMind/iron-router.git",
-        "tag": "v0.5.4",
-        "commit": "3e0e22ff85630b7503d0daa1538c6d90abb84020"
-      },
       "roles": {
         "git": "https://github.com/alanning/meteor-roles.git",
-        "tag": "v1.0.6",
-        "commit": "f81cbf7c765a4ed7e16a580c288db6f10a90856b"
+        "tag": "v1.1.1",
+        "commit": "b6080b89885c02af228c62576f5ba48b95f715c6"
       },
       "stripe": {
         "git": "https://github.com/appleifreak/stripe-meteor.git",
-        "tag": "v1.2.0",
-        "commit": "4f156b5d8208fd449a5689cc259a95e673ef1252"
+        "tag": "v1.4.0",
+        "commit": "7afbaecda1442124566096cd52f55170e4a78033"
       },
       "moment": {
         "git": "https://github.com/acreeger/meteor-moment.git",
@@ -43,6 +34,11 @@
         "git": "https://github.com/camilosw/flash-messages.git",
         "tag": "v0.2.1",
         "commit": "62cf1ee531684808b91dbe3ff15e63f6d5af1c66"
+      },
+      "iron-router": {
+        "git": "https://github.com/EventedMind/iron-router.git",
+        "tag": "v0.5.4",
+        "commit": "3e0e22ff85630b7503d0daa1538c6d90abb84020"
       },
       "page-js-ie-support": {
         "git": "https://github.com/tmeasday/meteor-page-js-ie-support.git",
